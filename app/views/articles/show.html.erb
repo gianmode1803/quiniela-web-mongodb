@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="login-content card">
+<!--
+      <h1 align="center">
+        <strong> image_tag @article.foto </strong>
+      </h1>
+-->
+      <p style="color:DarkSlateGray; font-family:courier; font-size:180%;" align="center">
+        <strong><%= @article.titulo %></strong>
+      </p>
+
+      <p style="color:DarkSlateGray; font-family:courier; font-size:90%;" style="font-family:courier;">
+        <strong>Autor:</strong>
+        <%= @article.autor %>
+      </p>
+      <p style="color:DarkSlateGray; font-family:courier; font-size:90%;" style="font-family:courier;">
+        <strong>Fecha publicacion:</strong>
+        <%= @article.fecha %>
+      </p>
+
+      <p style="color:DarkSlateGray; font-family:courier; font-size:120%;" align="justify" style="font-family:courier;">
+        <%= @article.cuerpo %>
+      </p>
+
+    </div>
+  </div>
+</div>

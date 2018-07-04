@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<div class="unix-login">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="login-content card">
+                            <div class="login-form">
+
+                    <h1 align="center" style="color:#000000 ">Información del Video</h1><br>
+                       <p ><strong style="color:#144C72">Url:</strong>
+                        <a style="color:#000000 "> <%= @media_video.url %></a></p>
+                     <p> <strong style="color:#144C72">Titulo:</strong>
+                         <a style="color:#000000 "> <%= @media_video.titulo %></a></p>
+                     <p><strong style="color:#144C72">Fecha de Publicación:</strong>
+                         <a style="color:#000000 "><%= @media_video.fecha %></a></p>
+                     <p><strong style="color:#144C72">Video:</strong>     <br>
+    	<iframe width="400" height="300"  src="<%= @media_video.url %>"></iframe> 
+                     <p><strong style="color:#144C72">Descripcion:</strong>
+                         <a style="color:#000000 "><%= @media_video.descripcion %></a></p>
+                     
+                     
+
+                     
+
+
+                              </div>
+
+                          </div>
+                      <a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to 'Editar' , edit_media_video_path(@media_video) %>  </a>
+                      <a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to 'Home Usuario' , root_path %>  </a>
+                      </div>
+
+                    </div>
+
+                </div> 
+    
+
+    </div>

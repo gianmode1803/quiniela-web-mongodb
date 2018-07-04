@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiniela</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+  </head>
+
+  
+
+  <body>
+    <!-- Preloader - style you can find in spinners.css -->
+    
+    <!-- Main wrapper  -->
+               <!-- header header  -->
+  <header id="header">
+    <nav class="navbar navbar-fixed-top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+  
+
+          <a class="navbar-brand navbar-left" href="/#header"><img src="https://i.imgur.com/PUrMDVa.png" class="img1"></img></a>
+        </div>  
+          <div class="nav navbar-bar navbar-right">
+          <ul class="nav navbar-nav">
+     
+            <li><a href="/">Home</a></li>
+            <li><a href="/#feature">Noticias</a></li>
+            <li><a href="/matches">Calendario</a></li>
+            <li><a href="/#gallery">Gallery</a></li>
+            <% if user_signed_in? %>
+                      <li class="active"> <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+                      <li class="active"> <%= link_to "Iniciar Sesión", new_user_session_path%></li>
+                      <li class="active"> <%= link_to "Registrarse", new_user_registration_path %></li>
+            <% end %>
+            <li><button id="search-button" class="btn" style="background-color: #015386; color: #fff"><span class="fa fa-search"><a href="#search"></span></button></a></li>
+          </ul>
+        </div>
+      </div>
+      <!--/.container-->
+    </nav>
+    <!--/nav-->
+  </header>
+  <!--/header-->
+ 
+
+        <!-- Page wrapper  -->
+       
+            <!-- Bread crumb -->
+
+            <!-- End Bread crumb -->     
+              <p class="notice" align="center"><%= notice %></p>
+              <p class="alert" align="center"><%= alert %></p>
+      </div>
+  
+      <%= yield %>
+  </body>
+</html>

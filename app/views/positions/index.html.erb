@@ -1,0 +1,124 @@
+<!-- <h1>Positions#index</h1>
+<p>Find me in app/views/positions/index.html.erb</p> -->
+
+<div id = "calendariogen">
+    <div class = "container">
+    <p id="notice"><%= notice %></p>
+     <!-- <div class = "row"> -->
+        <div class = "text-center">
+          <h3>Tablas de posiciones</h3>
+            <p> Visualiza las tablas de posiciones por grupo.</p>
+        </div>
+     <!--</div> -->
+    </div>
+  
+  <div class="container">
+
+  <!--  OBTENER LOS PAISES PARA NOMBRARLOS, SEGUN LOS PARTIDOS. COMO CONSULTARLOS? SON SOLO LOS RELACIONADOS, NO TODOS-->
+  
+
+
+
+  
+  <div id = "prueba">
+    <div class = "card">
+      <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+           <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Grupo
+            </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+
+        <div class="container">
+              <table class="table">
+
+                <tbody>
+                    <tr>
+                      <td>
+                        <p>Bandera</p>
+                      </td>
+                      <td>
+                        <p>País</p>
+                      </td>
+                      <td>
+                        <p>PJ</p>
+                      </td>
+                      <td>
+                        <p>PG</p>
+                      </td>
+                      <td>
+                        <p>PE</p>
+                      </td>
+                      <td>
+                        <p>PP</p>
+                      </td>
+                      <td>
+                        <p>GF</p>
+                      </td>
+                      <td>
+                        <p>GC</p>
+                      </td>
+                      <td>
+                        <p>DG+/-</p>
+                      </td>
+                      <td>
+                        <p>PTS</p>
+                      </td>
+                    </tr>         
+                </tbody>
+            </table>
+          <% @total_goles_por_equipo.each do | total_goles| %>
+            <table class="table">
+                <tbody>
+                    <tr>
+                      <td>
+                        <div class="bandera_h040">
+                          <img src="../assets/images/banderas/rusiaI.jpg">
+                        </div>
+                      </td>
+                      <td>
+                        <p> <%= total_goles.nombre %> <!-- Pais  --></p>
+                      </td>
+                      <td>
+                        <p> <%= total_goles.goles %> <!-- Goles a favor --></p>
+                      </td>
+                       <td>
+                        <p> <%= total_goles.goles %> <!-- Goles a favor --></p>
+                      </td>
+                       <td>
+                        <p> <%= total_goles.goles %> <!-- Goles a favor --></p>
+                      </td>
+                       <td>
+                        <p> <%= total_goles.goles %> <!-- Goles a favor --></p>
+                      </td>
+                       <td>
+                        <p> <%= total_goles.goles %> <!-- Goles a favor --></p>
+                      </td>
+                       <td>
+                        <p> <%= total_goles.goles %> <!-- Goles a favor --></p>
+                      </td>
+                       <td>
+                        <p> <%= total_goles.goles %> <!-- Goles a favor --></p>
+                      </td>
+                       <td>
+                        <p> <%= total_goles.goles %> <!-- Goles a favor --></p>
+                      </td>
+                    </tr>
+        
+                        
+                </tbody>
+            </table>
+            <% end %>
+         </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+   </div>
+</div>
+
+

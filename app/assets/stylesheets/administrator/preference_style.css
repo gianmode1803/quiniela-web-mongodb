@@ -1,0 +1,21 @@
+.titulo_h029{
+	color: black;
+	margin: 30px;
+	margin-left: 10%;
+}
+
+.tabla_h029{
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.tabla_h029 table{
+	border-collapse: collapse;
+	text-align: center;
+}
+
+.center_h029{
+	line-height: 80px;
+	font-size: 20px;
+	color: black;
+}

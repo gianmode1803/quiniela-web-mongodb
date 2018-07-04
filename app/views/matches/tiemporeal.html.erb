@@ -1,0 +1,15 @@
+
+<div id = "tiemporeal">
+	<div class = "container">
+		<h1>@quinielaw</h1>
+			<meta http-equiv="refresh" content="60" >
+
+			<ul>
+			    <% TwitterApi.tweetsStream.each do |tweet| %>
+			    <%= (tweet.created_at-4.hour).strftime("%H:%M")%>
+			    <li> <%= tweet.text %></li>
+			    <br>
+			    <% end %>
+			</ul>
+	</div>
+</div>

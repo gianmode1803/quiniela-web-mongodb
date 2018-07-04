@@ -1,0 +1,115 @@
+<!-- <h1>Pools#index</h1>
+<p>Find me in app/views/pools/index.html.erb</p> -->
+
+<head>
+    <title>Quiniela</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'administrator', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+
+  <div class="container pageHeadGrupo11">
+    <div class="row paddinGrupo11">
+      <div class="col col-lg-2 d-flex align-items-center">
+        <h1>
+          Quiniela
+        </h1>
+      </div>
+      <div class="col col-lg-1">
+        <a title="Crear quiniela" href="http://www.youtube.com">
+          <a href="pools/new"> <img src="../assets/icons_grupo11/addG.png" alt="Los Tejos" /> </a>
+        </a>
+      </div>
+      <div class="col col-lg-9 d-flex justify-content-end">
+        <h5>
+          Quinielas disponibles: <!-- aqui va el join--> / 3
+        </h5>
+      </div>
+    </div>
+  </div>
+
+
+
+  <% @pools.each do |pool| %>
+    <div class="center-block navIndexGrupo11 altura">
+      <div class="row vdivide altura">
+        <div class="col-sm-4 grupo11">
+          <div class="container containerGrupo11 text-center" style="margin-top: 5%">
+            <strong style="color: white">Tipo: <%= pool.tipo %></strong>
+          </div>
+        </div>
+        <div class="col-sm-4 grupo11">
+          <div class="container containerGrupo11 text-center" style="margin-top: 5%">
+            <strong style="color: white">Puntos acumulados: <%= pool.puntos %></strong>
+          </div>
+        </div>
+        <div class="col-sm-4 grupo11">
+          <div class="container containerGrupo11">
+            <div class="row" style="width: 250px; margin-left: 20px">
+              <div class="col d-flex justify-content-center">
+                <a href="<% link_to pool %>" role="button" class="btn btn-light botonesGrupo11">
+                  <img src="../assets/icons_grupo11/viewP.png">
+                </a>
+              </div>
+              <div class="col d-flex justify-content-center">
+                <a href="<% link_to edit_pool_path(pool)%>" role="button" class="btn btn-light botonesGrupo11">
+                  <img src="../assets/icons_grupo11/editP.png">
+                </a>
+              </div>
+              <div class="col d-flex justify-content-center">
+                <a href="<% link_to pool, method: :delete, data: { confirm: 'Are you sure?' }%>" role="button" class="btn btn-light botonesGrupo11">
+                  <img src="../assets/icons_grupo11/deleteP.png">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+
+
+
+<!--
+  <table>
+    <thead>
+      <tr>
+        <th>Puntos</th>
+        <th>Tipo</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @pools.each do |pool| %>
+        <tr>
+
+          <td>Puntos acumulados:<%= pool.puntos %></td>
+          <td>Tipo:<%= pool.tipo %></td>
+          <td><%= link_to 'Show', pool %></td>
+          <td><%= link_to 'Edit', edit_pool_path(pool) %></td>
+          <td><%= link_to 'Destroy', pool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+			 <table>
+				<% for i in (1..3)%>
+					<tr id="fila">
+						<td>
+						<div id="prueba"> esto es una prueba
+              json.array! @calendars, partial: 'calendars/calendar', as: :calendar -->
+							<!-- <div id="Noposeequinielasregi"><img src="../../assets/administrator/images/	Noposeequinielasregi.png"></div>  -->
+						<!-- </div>
+					</td>
+					</tr>
+				<% end%>
+			</table> -->
+
+
+
+		</div>
+</body>

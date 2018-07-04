@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+<script>
+  jQuery(document).ready(function($) {
+      $(".clickable-row").click(function() {
+          window.location = $(this).data("href");
+      });
+  });
+</script>
+
+<% if user_signed_in? && current_user.admin == false%>
+    <h1><font color="#000000">Lo sentimos pero esta pantalla es sólo para administradores</h1>
+<% elsif user_signed_in? && current_user.admin  %>
+
+<div class="table-responsive">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <table class="table table-hover table-bordered">
+          <h1><font color="#000000">Jugadores</h1>
+          <thead>
+            <tr  align="center">
+              <th><font color="#000000">Nombre</th>
+              <th><font color="#000000">Posicion</th>
+              <th><font color="#000000">Dorsal</th>
+              <th><font color="#000000">Apodo</th>
+              <th><font color="#000000">Debut</th>
+              <th><font color="#000000">Participaciones</th>
+              <th><font color="#000000">Goles</th>
+              <th><font color="#000000">Pais</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @players.each do |player| %>
+              <tr align="center">
+                <td><font color="#000000"><%= player.nombre + " " + player.apellido%></td>
+                <td><font color="#000000"><%= player.posicion %></td>
+                <td><font color="#000000"><%= player.dorsal %></td>
+                <td><font color="#000000"><%= player.apodo %></td>
+                <td><font color="#000000"><%= player.debut.strftime("%d/%m/%Y") %></td>
+                <td><font color="#000000"><%= player.participaciones%></td>
+                <td><font color="#000000"><%= player.goles %></td>
+                <td><font color="#000000"><%= player.country.nombre%></td>
+                <td><font color="#000000"><%= link_to 'Mostrar', player %></td>
+                <td><font color="#000000"><%= link_to 'Editar', edit_player_path(player) %></td>
+                <td><font color="#000000"><%= link_to 'Borrar', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+      </table>
+    </div>
+    <% if user_signed_in? && current_user.admin%>
+      <%= link_to 'Jugador nuevo', new_player_path %>
+    <% end %>
+    
+    <%= will_paginate @players %>
+  </div>
+</div>
+<br>
+<% else %>
+    <h1><font color="#000000">Lo sentimos pero esta pantalla es sólo para administradores</h1>
+<% end %>

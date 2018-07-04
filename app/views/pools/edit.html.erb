@@ -1,0 +1,21 @@
+<h1>Pools#edit</h1>
+<p>Find me in app/views/pools/edit.html.erb</p>
+
+<h1>Edit Project</h1>
+<%= form_for (@pool) do |f| %>
+  <p>
+    tipo: <%= f.text_field :tipo %>
+  </p>
+  <%= f.fields_for :predictions do |p| %>
+    <p>
+      <%= f.fields_for :goal_pools do |g| %>
+        <p>
+          goles: <%= g.text_field :cantidad %>
+      </p>
+      <% end %>
+    </p>
+  <% end %>
+  <p>
+    <%= f.submit 'Update Project' %>
+  </p>
+<% end %>

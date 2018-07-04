@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive m-t-40">
+            <table id="myTable" class="table table-bordered table-striped">
+              <h1 align="center">Calendario</h1>
+                <thead>
+                  <tr>
+                    <th style="text-align: center;">Fase</th>
+                    <th style="text-align: center;">Fecha</th>
+                    <th style="text-align: center;">Hora</th>
+                    <th style="text-align: center;">Estadio</th>
+                    <th colspan="3" style="text-align: center;">Acción</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <% @calendars.each do |calendar| %>
+                    <tr>
+                      <td><%= calendar.fase %></td>
+                      <td><%= calendar.fecha %></td>
+                      <td><%= calendar.hora.strftime("%H:%M") %></td>
+                      <td><%= calendar.stadium %></td>
+                      <td style="text-align: center;"><%= link_to  calendar, class: 'btn btn-info' do%>
+                          <i class="fa fa-eye"></i>
+                          Mostrar
+                          <%end%>
+                      </td>
+                      <td style="text-align: center;"><%= link_to edit_calendar_path(calendar), class: 'btn btn-warning' do%>
+                          <i class="fa fa-pencil"></i>
+                          Editar
+                          <%end%>
+                      </td>
+                      <td style="text-align: center;"><%= link_to calendar, class: 'btn btn-danger', method: :delete, data: { confirm: '¿Esta seguro que desea eliminar el calendario "' + calendar.fase + '" "' + calendar.fecha.to_s + '" "' + calendar.hora.strftime("%H:%M") + '"?' } do%>
+                          <i class="fa fa-trash"></i>
+                          Eliminar
+                          <%end%>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              <br>
+            </table>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-6" align="left">
+            <%= link_to 'Nuevo Calendario', new_calendar_path, class: 'btn btn-success'%>
+            <%= link_to 'Ver estadios', stadia_url, class: 'btn btn-success'%>
+            <%= link_to 'Partidos', show_calendar_fase_grupos_url, class: 'btn btn-success'%>
+          </div>
+          <div class="col-sm-6" align="right">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

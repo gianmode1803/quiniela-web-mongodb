@@ -1,0 +1,33 @@
+<div class="unix-login">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="login-content card">
+                            <div class="login-form">
+                                <%= simple_form_for(@media_video) do |f| %>
+                                         <%= f.error_notification %>
+                           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+                                      <div class="form-inputs">
+                   <%= f.input :url, required: true  %>
+                    <%= f.input :titulo ,required: true ,hint:"Introducir el nombre"  %>
+                    <%= f.input :fecha,require:true,hint:"Introducir la fecha " %>
+                    <%= f.input :descripcion,required:true,hint:"Introducir la descripcion" %>
+                                           
+                                           </div>  
+                                           
+                                 <div class="form-actions">
+                                    <%= f.button :submit,"AGREGAR", class: 'btn btn-primary btn-flat m-b-30 m-t-30 col-md-12'%>
+                                        </div>
+                                       <% end %>
+                                       <%= link_to 'Regresar', root_path %>
+                                    
+                                      </div>
+                                 </div>
+                          </div>
+                      </div>
+                    </div>
+                </div> 
+    
+
+ 

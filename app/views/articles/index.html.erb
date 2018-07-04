@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+<script>
+  jQuery(document).ready(function($) {
+      $(".clickable-row").click(function() {
+          window.location = $(this).data("href");
+      });
+  });
+</script>
+
+
+<div class="table-responsive">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <h1><font color="#000000">Administracion de Articulos</h1>
+      <table class="table table-hover table-bordered" cellpadding="15">
+        <thead>
+          <tr align="center">
+            <th><font color="#000000">Titulo</th>
+            <th><font color="#000000">Cuerpo</th>
+            <th><font color="#000000">Fecha</th>
+            <th><font color="#000000">Autor</th>
+            <% if user_signed_in? && current_user.admin%>
+            <th><font color="#000000">Destacado</th>
+            <th colspan="3"></th>
+            <% end %>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @articles.each do |article| %>
+            <tr align="center" class="clickable-row" data-href="articles/<%= article.id %>">
+              <td><font color="#000000"><%= article.titulo %></td>
+              <td><font color="#000000"><%= article.cuerpo %></td>
+              <td><font color="#000000"><%= article.fecha %></td>
+              <td><font color="#000000"><%= article.autor %></td>
+              <% if user_signed_in? && current_user.admin%>
+              <td><font color="#000000"><%= article.destacado %></td>
+              <td><font color="#000000"><%= link_to 'Editar', edit_article_path(article) %></td>
+              <td><font color="#000000"><%= link_to 'Borrar', article, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <% if user_signed_in? && current_user.admin%>
+    <%= link_to 'Nueva noticia', new_article_path %>
+    <% end %>
+  </div>
+</div>
+<br>
+

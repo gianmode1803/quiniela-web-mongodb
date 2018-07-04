@@ -1,0 +1,2 @@
+module MediaVideosHelper
+end

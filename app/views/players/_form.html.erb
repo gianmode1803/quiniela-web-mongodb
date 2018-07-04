@@ -1,0 +1,34 @@
+<% if user_signed_in? == false || current_user.admin == false%>
+    <h1><font color="#000000">Lo sentimos pero esta pantalla es sólo para administradores</h1>
+<% else user_signed_in? && current_user.admin  %>
+
+
+    <%= simple_form_for(@player) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="form-inputs">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="login-content card">
+              <div class="login-form">
+                <%= f.input :nombre %>
+                <%= f.input :apellido %>
+                <%= f.input :posicion %>
+                <%= f.input :fecha_nacimiento %>
+                <%= f.input :dorsal %>
+                <%= f.input :apodo %>
+                <%= f.input :debut %>
+                <%= f.input :participaciones %>
+                <%= f.input :foto %>
+                <%= f.input :goles %>
+                <div class="form-actions">
+                  <%= f.button :submit %>
+                </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    <% end %>
+<% end %>

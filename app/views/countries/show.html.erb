@@ -1,0 +1,102 @@
+<p id="notice"><%= notice %></p>
+<script>
+  jQuery(document).ready(function($) {
+      $(".clickable-row").click(function() {
+          window.location = $(this).data("href");
+      });
+  });
+</script>
+  
+<div class="row">
+
+        <div class="col-md-1">
+        </div>
+
+
+        <div class="col-md-5">
+          <h1>
+            <strong> <%= @country.nombre %> </strong>
+          </h1>
+          <h2>
+              <%= @country.apodo %>
+          </h2>
+          <h3>
+            <img src="<%= @country.bandera%>I.jpg">
+          </h3>
+        </div>
+
+        <div class="col-md-2">
+          <h1>
+            Grupo <%= @country.grupo %>
+          </h1>
+        </div>
+
+        <div class="col-md-4">
+          <%=image_tag @country.escudo %>
+        </div>
+
+</div>
+
+<div class="row">
+
+        <div class="col-md-1">
+        </div>
+
+
+        <div class="col-md-5">
+          <h1> Plantilla </h1>
+        </div>
+
+        <div class="col-md-5" align="right">
+          <% if user_signed_in? && current_user.admin%>
+              <p><font color = "#000000">
+                <%= link_to 'Editar', edit_country_path(@country) %> 
+                <%= link_to 'Borrar', @country, method: :delete, data: { confirm: 'Está seguro?' } %>
+              </p>
+            <% end %>
+        </div>
+ 
+</div>
+
+<div class="table-responsive">
+  <div class="row justify-content-center">
+     <div class="col-lg-10">
+      <table class="table table-hover table-bordered" cellpadding="15">
+
+        <thead>
+          <tr align="center">
+            <th><font color="#000000">Nombre</th>
+            <th><font color="#000000">Fecha nacimiento</th>
+            <th><font color="#000000">Ciudad nacimiento</th>
+            <th><font color="#000000">Posicion</th>
+            <th><font color="#000000">Dorsal</th>
+            <th><font color="#000000">Apodo</th>
+            <th><font color="#000000">Debut</th>
+            <th><font color="#000000">Participaciones</th>
+            <th><font color="#000000">Goles</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @player.each do |play| %>
+
+             <tr align="center" class="clickable-row" data-href="../players/<%= play.id %>">
+              <td><font color="#000000"><%= link_to play.nombre + " " + play.apellido, play%></td>
+              <td><font color="#000000"><%= play.fecha_nacimiento.strftime("%d/%m/%Y") %></td>
+              <td><font color="#000000"><%= play.ciudad_nacimiento %></td>
+              <td><font color="#000000"><%= play.posicion %></td>
+              <td><font color="#000000"><%= play.dorsal %></td>
+              <td><font color="#000000"><%= play.apodo %></td>
+              <td><font color="#000000"><%= play.debut.strftime("%d/%m/%y") %></td>
+              <td><font color="#000000"><%= play.participaciones %></td>
+              <td><font color="#000000"><%= play.goles %></td>
+            </tr>
+          <% end %>
+
+        </tbody>
+      </table>
+
+    </div>
+
+   <!-- <%= link_to 'Edit', edit_country_path(@country) %> | 
+    <%= link_to 'Back', countries_path %> -->

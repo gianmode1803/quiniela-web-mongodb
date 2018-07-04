@@ -1,0 +1,2402 @@
+<head>
+    <title>Quiniela</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'administrator', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+	<div class="container pageHeadGrupo11">
+	  <div class="row justify-content">
+	    <div class="col col-lg-5">
+	      <h1>
+	      	Quiniela
+	      </h1>
+	    </div>
+	  </div>
+	</div>
+
+
+	<div class="container navIndexGrupo113 navTopGrupo11 d-flex justify-content-center">
+		<h3>Fase de Grupos</h3>
+	</div>
+
+		<!--GRUPO A -------------------------------------------------------------->
+<%= form_for (@pool) do |f1|  %>
+	<div id="faseGrupos">
+
+		<!--GRUPO A -------------------------------------------------------------->
+
+    <% if @pool.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@pool.errors.count, "error") %> prohibited this pool from being saved:</h2>
+
+        <ul>
+        <% @pool.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= f1.hidden_field :tipo, :value => "completa" %>
+    <%= f1.hidden_field :puntos, :value => 0, :id =>"puntos" %>
+    <%= f1.hidden_field :user_id, :value => 1 %>
+				<div id="grupoA" class="container navIndexGrupo112 navTopGrupo11">
+			  		<table>
+			  			      <tr>
+			                <th scope="col">Grupo <%= @calendars[0].grupo %> </th>
+			                <th scope="col" class="grupo11Tabla">Clasificado 1<%= @calendars[0].grupo %></th>
+			                <th scope="col" class="grupo11Tabla">Clasificado 2<%= @calendars[0].grupo %></th>
+					        </tr>
+			  		</table>
+				</div>
+				<div id="bodygrupoA">
+					<div class="container container112">
+					    <div class="row vdivide">
+					    	<div class="col-sm-6 grupo11">
+					    		<div class="container containerGrupo11">
+									<table class="table">
+									    <tbody>
+                        <%=  f1.fields_for :predictions do |p1| %>
+                        <%= p1.hidden_field :calendar_id, :value => @calendars[0].id %>
+									    	<tr>
+									            <td>
+			              							<img id = "IA1"   src="<%= @calendars[0].country%>I.jpg">
+									      		</td>
+									      		<td>
+									      			<h6 class="text-center">
+			                							<%= @calendars[0].fecha.strftime("%d / %m / %Y")  %>
+									      			</h6>
+									      			<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p1.fields_for :goal_pools do |g0| %>
+                                <%= g0.number_field :cantidad,id:"GA1", :class => 'form-control text-center', :value => 0  %>
+                                <%= g0.hidden_field :country_id, id:"A1",:value => @calendars[0].country_id %>
+                                <%  end %>
+														<!-- <input type="number" min="0" value=0  id= "goles0" class="form-control text-center"/> -->
+			                					<div class="input-group-prepend">
+									    					                <span class="input-group-text" id="">vs</span>
+									 	 				    </div>
+                                <%= p1.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad,id:"GA2", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"A2",:value => @calendars[1].country_id %>
+                                <%  end %>
+                            	<!-- <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/> -->
+													</div>
+									      		</td>
+									            <td>
+			              							<img id = "IA2"  id="imagen" src="<%= @calendars[1].country%>D.jpg">
+									      		</td>
+									    	</tr>
+                        <%  end %>
+                        <%=  f1.fields_for :predictions do |p2| %>
+                        <%= p2.hidden_field :calendar_id, :value => @calendars[2].id %>
+									    	<tr>
+										    	<td>
+			                						<img id = "IA3"  src="<%= @calendars[2].country%>I.jpg">
+										    	</td>
+										    	<td>
+										      		<h6 class="text-center">
+			                							<%= @calendars[2].fecha.strftime("%d / %m / %Y")  %>
+										      		</h6>
+									    	  		<div class="input-group input-group-sm align-middle versusGrupo11">
+                                  <%= p2.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad,id:"GA3", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"A3", :value => @calendars[2].country_id %>
+                                  <%  end %>
+                                <!-- <input type="number" value=0  id= "goles3" class="form-control text-center"/> -->
+  															<div class="input-group-prepend">
+  										    					<span class="input-group-text" id="">vs</span>
+  										 	 				</div>
+                                <%=  p2.fields_for :goal_pools do |g3| %>
+                                <%= g3.number_field :cantidad,id:"GA4", :class => 'form-control text-center', :value => 0 %>
+                                <%= g3.hidden_field :country_id, id:"A4", :value => @calendars[3].country_id %>
+                                <%  end %>
+													</div>
+										    	</td>
+										    	<td>
+			              							<img id = "IA4"  src="<%= @calendars[3].country%>D.jpg">
+										    	</td>
+									    	</tr>
+                        <%  end %>
+                        <%=  f1.fields_for :predictions do |p3| %>
+                        <%= p3.hidden_field :calendar_id, :value => @calendars[4].id %>
+									    	<tr>
+									      		<td>
+			              							<img id = "IA5"  src="<%= @calendars[4].country%>I.jpg">
+									      		</td>
+											    <td>
+											      	<h6 class="text-center">
+					                					<%= @calendars[4].fecha.strftime("%d / %m / %Y")  %> - <%= @calendars[4].hora.strftime("%I:%M %p")%>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p3.fields_for :goal_pools do |g4| %>
+                                <%= g4.number_field :cantidad,id:"GA5", :class => 'form-control text-center', :value => 0  %>
+                                <%= g4.hidden_field :country_id, id:"A5", :value => @calendars[4].country_id %>
+                                <%  end %>
+                                <!-- <input type="number" value=0  id= "goles5" class="form-control text-center"/> -->
+    														<div class="input-group-prepend">
+    									    					<span class="input-group-text" id="">vs</span>
+    									 	 				</div>
+                                <%=  p3.fields_for :goal_pools do |g5| %>
+                                <%= g5.number_field :cantidad,id:"GA6", :class => 'form-control text-center', :value => 0  %>
+                                <%= g5.hidden_field :country_id, id:"A6", :value => @calendars[5].country_id %>
+                                <%  end %>
+													</div>
+											    </td>
+											    <td>
+					              					<img id = "IA6"  src="<%= @calendars[5].country%>D.jpg">
+											    </td>
+									    	</tr>
+                        <% end %>
+									 	</tbody>
+									</table>
+								</div>
+					    	</div>
+					    	<div class="col-sm-6 grupo11">
+					    		<div class="container containerGrupo11">
+									<table class="table">
+									 	<tbody>
+                      <%=  f1.fields_for :predictions do |p4| %>
+                      <%= p4.hidden_field :calendar_id, :value => @calendars[6].id %>
+									    	<tr>
+									      		<td>
+			              							<img id = "IA7"  src="<%= @calendars[6].country%>I.jpg">
+									      		</td>
+									      		<td>
+									      			<h6 class="text-center">
+			                							<%= @calendars[6].fecha.strftime("%d / %m / %Y")  %>
+									      			</h6>
+									      			<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p4.fields_for :goal_pools do |g6| %>
+                                <%= g6.number_field :cantidad,id:"GA7", :class => 'form-control text-center', :value => 0  %>
+                                <%= g6.hidden_field :country_id, id:"A7", :value => @calendars[6].country_id %>
+                                <%  end %>
+                                <!-- <input type="number" value=0  id= "goles7" class="form-control text-center"/> -->
+    														<div class="input-group-prepend">
+    									    					<span class="input-group-text" id="">vs</span>
+    									 	 				</div>
+                                <%=  p4.fields_for :goal_pools do |g7| %>
+                                <%= g7.number_field :cantidad,id:"GA8", :class => 'form-control text-center', :value => 0  %>
+                                <%= g7.hidden_field :country_id, id:"A8", :value => @calendars[7].country_id %>
+                                <%  end %>
+													</div>
+									      		</td>
+									      		<td>
+			              							<img id = "IA8"  src="<%= @calendars[7].country%>D.jpg">
+									      		</td>
+									    	</tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p5| %>
+                        <%= p5.hidden_field :calendar_id, :value => @calendars[8].id %>
+									    	<tr>
+											    <td>
+				              						<img id = "IA9"  src="<%= @calendars[8].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+				                  						<%= @calendars[8].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											    	  	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                  <%=  p5.fields_for :goal_pools do |g8| %>
+                                  <%= g8.number_field :cantidad,id:"GA9", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g8.hidden_field :country_id, id:"A9", :value => @calendars[8].country_id %>
+                                  <%  end %>
+                                <!-- <input type="number" value=0  id= "goles9" class="form-control text-center"/> -->
+  															<div class="input-group-prepend">
+  										    					<span class="input-group-text" id="">vs</span>
+  										 	 				</div>
+                                <%=  p5.fields_for :goal_pools do |g9| %>
+                                <%= g9.number_field :cantidad,id:"GA10", :class => 'form-control text-center', :value => 0  %>
+                                <%= g9.hidden_field :country_id, id:"A10", :value => @calendars[9].country_id %>
+                                <%  end %>
+														</div>
+											    </td>
+											    <td>
+				              						<img id = "IA10"  src="<%= @calendars[9].country%>D.jpg">
+											    </td>
+									    	</tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p6| %>
+                        <%= p6.hidden_field :calendar_id, :value => @calendars[10].id %>
+									    	<tr>
+											    <td>
+							                        <img id = "IA11"  src="<%= @calendars[10].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[10].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p6.fields_for :goal_pools do |g10| %>
+                                <%= g10.number_field :cantidad,id:"GA11", :class => 'form-control text-center', :value => 0  %>
+                                <%= g10.hidden_field :country_id, id:"A11", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p6.fields_for :goal_pools do |g11| %>
+                                  <%= g11.number_field :cantidad,id:"GA12", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g11.hidden_field :country_id, id:"A12", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+											    </td>
+											    <td>
+					              					<img id = "IA12"  src="<%= @calendars[11].country%>D.jpg">
+											    </td>
+									    	</tr>
+                        <% end %>
+									  	</tbody>
+									</table>
+								</div>
+					    	</div>
+					  	</div>
+					</div>
+				</div>
+
+		<!--GRUPO A/ -------------------------------------------------------------->
+
+
+
+		<!--GRUPO B -------------------------------------------------------------->
+
+				<div id="grupoB" class="container navIndexGrupo112">
+	          		<table>
+		      			<tr>
+					      	<th scope="col">Grupo <%= @calendars[12].grupo %></th>
+					      	<th scope="col" class="grupo11Tabla">Clasificado 1<%= @calendars[12].grupo %></th>
+					      	<th scope="col" class="grupo11Tabla">Clasificado 2<%= @calendars[12].grupo %></th>
+					    </tr>
+	          		</table>
+				</div>
+				<div id="bodygrupoB">
+					<div class="container container112">
+						<div class="row vdivide">
+						  	<div class="col-sm-6 grupo11">
+						    	<div class="container containerGrupo11">
+									<table class="table">
+									 	<tbody>
+                      <%=  f1.fields_for :predictions do |p7| %>
+                      <%= p7.hidden_field :calendar_id, :value => @calendars[12].id %>
+									    	<tr>
+											    <td>
+						                            <img id = "IB1"  src="<%= @calendars[12].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[12].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p7.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad,id:"GB1", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"B1", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p7.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad,id:"GB2", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"B2", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+											    </td>
+											    <td>
+						                          <img id = "IB2"  src="<%= @calendars[13].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p8| %>
+                        <%= p8.hidden_field :calendar_id, :value => @calendars[14].id %>
+										    <tr>
+											    <td>
+						                            <img id = "IB3"  src="<%= @calendars[14].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+	                            						<%= @calendars[14].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											    	<div class="input-group input-group-sm align-middle versusGrupo11">
+                              <%=  p8.fields_for :goal_pools do |g1| %>
+                              <%= g1.number_field :cantidad,id:"GB3", :class => 'form-control text-center', :value => 0  %>
+                              <%= g1.hidden_field :country_id, id:"B3", :value => @calendars[10].country_id %>
+                              <%  end %>
+
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text" id="">vs</span>
+                              </div>
+                              <%=  p8.fields_for :goal_pools do |g2| %>
+                                <%= g2.number_field :cantidad,id:"GB4", :class => 'form-control text-center', :value => 0  %>
+                                <%= g2.hidden_field :country_id, id:"B4", :value => @calendars[11].country_id %>
+                                <%  end %>
+													</div>
+											    </td>
+											    <td>
+	                          						<img id = "IB5"  src="<%= @calendars[15].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p9| %>
+                        <%= p9.hidden_field :calendar_id, :value => @calendars[16].id %>
+										    <tr>
+										      	<td>
+	                          						<img id = "IB5"  src="<%= @calendars[16].country%>I.jpg">
+										      	</td>
+										      	<td>
+										      		<h6 class="text-center">
+	                            						<%= @calendars[16].fecha.strftime("%d / %m / %Y")  %>
+										      		</h6>
+										      		<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p9.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad,id:"GB5", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"B5", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p9.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad,id:"GB6", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"B6", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+						                        	<img id = "IB6"  src="<%= @calendars[17].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+										</tbody>
+									</table>
+								</div>
+					    	</div>
+						    <div class="col-sm-6 grupo11">
+						    	<div class="container containerGrupo11">
+									<table class="table">
+										<tbody>
+                      <%=  f1.fields_for :predictions do |p10| %>
+                      <%= p10.hidden_field :calendar_id, :value => @calendars[18].id %>
+										    <tr>
+											    <td>
+		                          					<img id = "IB7"  src="<%= @calendars[18].country%>I.jpg">
+											    </td>
+										      	<td>
+										      		<h6 class="text-center">
+						                            	<%= @calendars[18].fecha.strftime("%d / %m / %Y")  %>
+										      		</h6>
+										      		<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p10.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad,id:"GB7", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"B7", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p10.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad,id:"GB8", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"B8", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+										      		<img id = "IB8"  src="<%= @calendars[19].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p11| %>
+                        <%= p11.hidden_field :calendar_id, :value => @calendars[20].id %>
+										    <tr>
+											    <td>
+	                          						<img id = "IB9"  src="<%= @calendars[20].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[20].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											    	  	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                  <%= p11.fields_for :goal_pools do |g1| %>
+                                  <%= g1.number_field :cantidad,id:"GB9", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g1.hidden_field :country_id, id:"B9", :value => @calendars[10].country_id %>
+                                  <%  end %>
+
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text" id="">vs</span>
+                                  </div>
+                                  <%=  p11.fields_for :goal_pools do |g2| %>
+                                    <%= g2.number_field :cantidad,id:"GB10", :class => 'form-control text-center', :value => 0  %>
+                                    <%= g2.hidden_field :country_id, id:"B10", :value => @calendars[11].country_id %>
+                                    <%  end %>
+														</div>
+											    </td>
+											    <td>
+	                          						<img id = "IB10"  src="<%= @calendars[21].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p12| %>
+                        <%= p12.hidden_field :calendar_id, :value => @calendars[22].id %>
+										    <tr>
+										      	<td>
+	                        						<img id = "IB11"  src="<%= @calendars[22].country%>I.jpg">
+										      	</td>
+										      	<td>
+										      		<h6 class="text-center">
+	                            						<%= @calendars[22].fecha.strftime("%d / %m / %Y")  %>
+										      		</h6>
+										      		<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p12.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad,id:"GB11", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"B11", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p12.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad,id:"GB12", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"B12", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+	                          						<img id = "IB12"  src="<%= @calendars[23].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+										</tbody>
+									</table>
+								</div>
+						    </div>
+						</div>
+					</div>
+				</div>
+		<!--GRUPO B/ -------------------------------------------------------------->
+
+
+		<!--GRUPO C -------------------------------------------------------------->
+				<div id="grupoC" class="container navIndexGrupo112">
+	          		<table>
+	          			<tr>
+					      	<th scope="col">Grupo <%= @calendars[24].grupo %></th>
+					      	<th scope="col" class="grupo11Tabla">Clasificado 1<%= @calendars[24].grupo %></th>
+					      	<th scope="col" class="grupo11Tabla">Clasificado 2<%= @calendars[24].grupo %></th>
+					    </tr>
+	          		</table>
+				</div>
+				<div id="bodygrupoC">
+					<div class="container container112">
+						<div class="row vdivide">
+						  	<div class="col-sm-6 grupo11">
+						    	<div class="container containerGrupo11">
+									<table class="table">
+										<tbody>
+                      <%=  f1.fields_for :predictions do |p13| %>
+                      <%= p13.hidden_field :calendar_id, :value => @calendars[24].id %>
+										    <tr>
+											    <td>
+						                            <img id = "IC1"  src="<%= @calendars[24].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[24].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p13.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad,id:"GC1", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"C1", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p13.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad,id:"GC2", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"C2", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+											    </td>
+											    <td>
+						                          	<img id = "IC2"  src="<%= @calendars[25].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p14| %>
+                        <%= p14.hidden_field :calendar_id, :value => @calendars[26].id %>
+										    <tr>
+											    <td>
+						                            <img id = "IC3"  src="<%= @calendars[26].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+		                        						<%= @calendars[26].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											    	<div class="input-group input-group-sm align-middle versusGrupo11">
+                              <%=  p14.fields_for :goal_pools do |g1| %>
+                              <%= g1.number_field :cantidad,id:"GC3", :class => 'form-control text-center', :value => 0  %>
+                              <%= g1.hidden_field :country_id, id:"C3", :value => @calendars[10].country_id %>
+                              <%  end %>
+
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text" id="">vs</span>
+                              </div>
+                              <%=  p14.fields_for :goal_pools do |g2| %>
+                                <%= g2.number_field :cantidad,id:"GC4", :class => 'form-control text-center', :value => 0  %>
+                                <%= g2.hidden_field :country_id, id:"C4", :value => @calendars[11].country_id %>
+                                <%  end %>
+													</div>
+											    </td>
+											    <td>
+		                      						<img id = "IC4"  src="<%= @calendars[27].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p15| %>
+                        <%= p15.hidden_field :calendar_id, :value => @calendars[28].id %>
+										    <tr>
+											    <td>
+			                      					<img id = "IC5"  src="<%= @calendars[28].country%>I.jpg">
+											    </td>
+										      	<td>
+										      		<h6 class="text-center">
+		                        						<%= @calendars[28].fecha.strftime("%d / %m / %Y")  %>
+										      		</h6>
+										      		<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p15.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad,id:"GC5", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"C5", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p15.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad,id:"GC6", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"C6", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+						                        	<img id = "IC6"  src="<%= @calendars[29].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+										</tbody>
+									</table>
+								</div>
+						    </div>
+						    <div class="col-sm-6 grupo11">
+						    	<div class="container containerGrupo11">
+									<table class="table">
+										<tbody>
+                        <%=  f1.fields_for :predictions do |p16| %>
+                        <%= p16.hidden_field :calendar_id, :value => @calendars[30].id %>
+										    <tr>
+											    <td>
+			                      					<img id = "IC7"  src="<%= @calendars[30].country%>I.jpg">
+											    </td>
+										      	<td>
+										      		<h6 class="text-center">
+						                            	<%= @calendars[30].fecha.strftime("%d / %m / %Y")  %>
+										      		</h6>
+										      		<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p16.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad,id:"GC7", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"C7", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p16.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad,id:"GC8", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"C8", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+										      		<img id = "IC8"  src="<%= @calendars[31].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p17| %>
+                        <%= p17.hidden_field :calendar_id, :value => @calendars[32].id %>
+										    <tr>
+											    <td>
+		                      						<img id = "IC9"  src="<%= @calendars[32].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[32].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											    	  	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                  <%=  p17.fields_for :goal_pools do |g1| %>
+                                  <%= g1.number_field :cantidad,id:"GC9", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g1.hidden_field :country_id, id:"C9", :value => @calendars[10].country_id %>
+                                  <%  end %>
+
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text" id="">vs</span>
+                                  </div>
+                                  <%=  p17.fields_for :goal_pools do |g2| %>
+                                    <%= g2.number_field :cantidad,id:"GC10", :class => 'form-control text-center', :value => 0  %>
+                                    <%= g2.hidden_field :country_id, id:"C10", :value => @calendars[11].country_id %>
+                                    <%  end %>
+														</div>
+											    </td>
+											    <td>
+		                      						<img id = "IC10"  src="<%= @calendars[33].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p18| %>
+                        <%= p18.hidden_field :calendar_id, :value => @calendars[34].id %>
+										    <tr>
+											    <td>
+			                    					<img id = "IC11"  src="<%= @calendars[34].country%>I.jpg">
+											    </td>
+										      	<td>
+										      		<h6 class="text-center">
+		                        						<%= @calendars[34].fecha.strftime("%d / %m / %Y")  %>
+										      		</h6>
+										      		<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p18.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad,id:"GC11", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"C11", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p18.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad,id:"GC12", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"C12", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+		                      						<img id = "IC12"  src="<%= @calendars[35].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+										</tbody>
+									</table>
+								</div>
+						    </div>
+						</div>
+					</div>
+				</div>
+		<!--GRUPO C/ -------------------------------------------------------------->
+
+
+		<!--GRUPO D -------------------------------------------------------------->
+				<div id="grupoD" class="container navIndexGrupo112">
+	          		<table>
+	          			<tr>
+			      			<th scope="col">Grupo <%= @calendars[36].grupo %></th>
+					      	<th scope="col" class="grupo11Tabla">Clasificado 1<%= @calendars[36].grupo %></th>
+					      	<th scope="col" class="grupo11Tabla">Clasificado 2<%= @calendars[36].grupo %></th>
+					    </tr>
+	          		</table>
+				</div>
+				<div id="bodygrupoD">
+					<div class="container container112">
+						<div class="row vdivide">
+						  	<div class="col-sm-6 grupo11">
+						    	<div class="container containerGrupo11">
+									<table class="table">
+						    			<tbody>
+                        <%=  f1.fields_for :predictions do |p19| %>
+                        <%= p19.hidden_field :calendar_id, :value => @calendars[36].id %>
+										    <tr>
+											    <td>
+							                        <img id = "ID1"  src="<%= @calendars[36].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+								                        <%= @calendars[36].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p19.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad,id:"GD1", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"D1", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p19.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GD3", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"D2", :value => @calendars[11].country_id %>
+                                  <%  end %>
+														</div>
+												</td>
+												<td>
+							                        <img id = "ID2"  src="<%= @calendars[37].country%>D.jpg">
+												</td>
+											</tr>
+                      <% end %>
+                      <%=  f1.fields_for :predictions do |p20| %>
+                      <%= p20.hidden_field :calendar_id, :value => @calendars[38].id %>
+											<tr>
+											    <td>
+							                        <img id = "ID3"  src="<%= @calendars[38].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+		                            					<%= @calendars[38].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											    	<div class="input-group input-group-sm align-middle versusGrupo11">
+                              <%=  p20.fields_for :goal_pools do |g1| %>
+                              <%= g1.number_field :cantidad, :class => 'form-control text-center', :value => 0  %>
+                              <%= g1.hidden_field :country_id, id:"D3", :value => @calendars[10].country_id %>
+                              <%  end %>
+
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text" id="">vs</span>
+                              </div>
+                              <%=  p20.fields_for :goal_pools do |g2| %>
+                                <%= g2.number_field :cantidad, id:"GD4", :class => 'form-control text-center', :value => 0  %>
+                                <%= g2.hidden_field :country_id, id:"D4", :value => @calendars[11].country_id %>
+                                <%  end %>
+													</div>
+												</td>
+												<td>
+		                          					<img id = "ID4"  src="<%= @calendars[39].country%>D.jpg">
+												</td>
+											</tr>
+                      <% end %>
+                      <%=  f1.fields_for :predictions do |p21| %>
+                      <%= p21.hidden_field :calendar_id, :value => @calendars[40].id %>
+											<tr>
+											    <td>
+		                          					<img id = "ID5"  src="<%= @calendars[40].country%>I.jpg">
+											    </td>
+											    <td>
+												   	<h6 class="text-center">
+			                            				<%= @calendars[40].fecha.strftime("%d / %m / %Y")  %>
+												   	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p21.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GD5", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"D5", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p21.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GD6", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"D6", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+											    </td>
+											    <td>
+							                        <img id = "ID6"  src="<%= @calendars[41].country%>D.jpg">
+											    </td>
+											</tr>
+                      <% end %>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col-sm-6 grupo11">
+						    	<div class="container containerGrupo11">
+									<table class="table">
+										<tbody>
+                      <%=  f1.fields_for :predictions do |p22| %>
+                      <%= p22.hidden_field :calendar_id, :value => @calendars[42].id %>
+										    <tr>
+											    <td>
+		                          					<img id = "ID7"  src="<%= @calendars[42].country%>I.jpg">
+											    </td>
+										      	<td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[42].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p22.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GD7", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"D7", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p22.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GD8", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"D8", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+										      		<img id = "ID8"  src="<%= @calendars[43].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p23| %>
+                        <%= p23.hidden_field :calendar_id, :value => @calendars[44].id %>
+										    <tr>
+											    <td>
+	                          						<img id = "ID9"  src="<%= @calendars[44].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[44].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+										    	  	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p23.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GD9", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"D9", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p23.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GD10", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"D10", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+											    </td>
+											    <td>
+	                          						<img id = "ID10"  src="<%= @calendars[45].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p24| %>
+                        <%= p24.hidden_field :calendar_id, :value => @calendars[46].id %>
+										    <tr>
+											    <td>
+		                        					<img id = "ID11"  src="<%= @calendars[46].country%>I.jpg">
+											    </td>
+										      	<td>
+											      	<h6 class="text-center">
+		                            					<%= @calendars[46].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p24.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GD11", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"D11", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p24.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GD12", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"D12", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										     	<td>
+	                          						<img id = "ID12"  src="<%= @calendars[47].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+		<!--GRUPO D/ -------------------------------------------------------------->
+
+
+		<!--GRUPO E -------------------------------------------------------------->
+
+				<div id="grupoE" class="container navIndexGrupo112">
+	          		<table>
+	          			<tr>
+	          				<th scope="col">Grupo <%= @calendars[48].grupo %></th>
+							<th scope="col" class="grupo11Tabla">Clasificado 1<%= @calendars[48].grupo %></th>
+						    <th scope="col" class="grupo11Tabla">Clasificado 2<%= @calendars[48].grupo %></th>
+					    </tr>
+	          		</table>
+				</div>
+				<div id="bodygrupoE">
+					<div class="container container112">
+						<div class="row vdivide">
+						    <div class="col-sm-6 grupo11">
+						    	<div class="container containerGrupo11">
+									<table class="table">
+										<tbody>
+                      <%=  f1.fields_for :predictions do |p25| %>
+                      <%= p25.hidden_field :calendar_id, :value => @calendars[48].id %>
+										    <tr>
+											    <td>
+						                            <img id = "IE1"  src="<%= @calendars[48].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[48].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p25.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GE1", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"E1", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p25.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GE2", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"E2", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+											    </td>
+											    <td>
+						                            <img id = "IE2"  src="<%= @calendars[49].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p26| %>
+                        <%= p26.hidden_field :calendar_id, :value => @calendars[50].id %>
+										    <tr>
+											    <td>
+						                            <img id = "IE3"  src="<%= @calendars[50].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+		                        						<%= @calendars[50].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											    	<div class="input-group input-group-sm align-middle versusGrupo11">
+                              <%= p26.fields_for :goal_pools do |g1| %>
+                              <%= g1.number_field :cantidad, id:"GE3", :class => 'form-control text-center', :value => 0  %>
+                              <%= g1.hidden_field :country_id, id:"E3", :value => @calendars[10].country_id %>
+                              <%  end %>
+
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text" id="">vs</span>
+                              </div>
+                              <%=   p26.fields_for :goal_pools do |g2| %>
+                                <%= g2.number_field :cantidad, id:"GE4", :class => 'form-control text-center', :value => 0  %>
+                                <%= g2.hidden_field :country_id, id:"E4", :value => @calendars[11].country_id %>
+                                <%  end %>
+													</div>
+											    </td>
+											    <td>
+		                      						<img id = "IE4"  src="<%= @calendars[51].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p27| %>
+                        <%= p27.hidden_field :calendar_id, :value => @calendars[52].id %>
+										    <tr>
+											    <td>
+			                      					<img id = "IE5"  src="<%= @calendars[52].country%>I.jpg">
+											    </td>
+										      	<td>
+										      		<h6 class="text-center">
+		                        						<%= @calendars[52].fecha.strftime("%d / %m / %Y")  %>
+										      		</h6>
+										      		<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%= p27.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GE5", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"E5", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p27.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GE6", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"E6", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+						                        	<img id = "IE6"  src="<%= @calendars[53].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+										</tbody>
+									</table>
+								</div>
+						    </div>
+						    <div class=	"col-sm-6 grupo11">
+						    	<div class="container containerGrupo11">
+									<table class="table">
+										<tbody>
+                      <%=  f1.fields_for :predictions do |p28| %>
+                      <%= p28.hidden_field :calendar_id, :value => @calendars[54].id %>
+										    <tr>
+											    <td>
+			                      					<img id = "IE7"  src="<%= @calendars[54].country%>I.jpg">
+											    </td>
+										      	<td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[54].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p28.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GE7", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"E7", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p28.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GE8", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"E8", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+											    <td>
+											      	<img id = "IE8"  src="<%= @calendars[55].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p29| %>
+                        <%= p29.hidden_field :calendar_id, :value => @calendars[56].id %>
+										    <tr>
+											    <td>
+		                      						<img id = "IE9"  src="<%= @calendars[56].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[56].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+										    	  	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p29.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GE9", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"E9", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p29.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GE10", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"E10", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+											    </td>
+											    <td>
+		                      						<img id = "IE10"  src="<%= @calendars[57].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p30| %>
+                        <%= p30.hidden_field :calendar_id, :value => @calendars[58].id %>
+										    <tr>
+											    <td>
+			                    					<img id = "IE11"  src="<%= @calendars[58].country%>I.jpg">
+											    </td>
+										      	<td>
+											      	<h6 class="text-center">
+			                        					<%= @calendars[58].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p30.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GE11", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"E11", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p30.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GE12", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"E12", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+		                      						<img id = "IE12"  src="<%= @calendars[59].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+										</tbody>
+									</table>
+								</div>
+						    </div>
+						</div>
+					</div>
+				</div>
+		<!--GRUPO E/ -------------------------------------------------------------->
+
+
+		<!--GRUPO F -------------------------------------------------------------->
+				<div id="grupoF" class="container navIndexGrupo112">
+	          		<table>
+	          			<tr>
+	          				<th scope="col">Grupo <%= @calendars[60].grupo %></th>
+						    <th scope="col" class="grupo11Tabla">Clasificado 1<%= @calendars[60].grupo %></th>
+						    <th scope="col" class="grupo11Tabla">Clasificado 2<%= @calendars[60].grupo %></th>
+					    </tr>
+	          		</table>
+				</div>
+				<div id="bodygrupoF">
+					<div class="container container112">
+						<div class="row vdivide">
+					  		<div class="col-sm-6 grupo11">
+						    	<div class="container containerGrupo11">
+									<table class="table">
+										<tbody>
+                      <%=  f1.fields_for :predictions do |p31| %>
+                      <%= p31.hidden_field :calendar_id, :value => @calendars[60].id %>
+										    <tr>
+											    <td>
+						                            <img id = "IF1"  src="<%= @calendars[60].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[60].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p31.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GF1", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"F1", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p31.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GF2", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"F2", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+											    </td>
+											    <td>
+						                          <img id = "IF2"  src="<%= @calendars[61].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p32| %>
+                        <%= p32.hidden_field :calendar_id, :value => @calendars[62].id %>
+										    <tr>
+											    <td>
+						                            <img id = "IF3"  src="<%= @calendars[62].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+		                        						<%= @calendars[62].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											    	<div class="input-group input-group-sm align-middle versusGrupo11">
+                              <%=  p32.fields_for :goal_pools do |g1| %>
+                              <%= g1.number_field :cantidad, id:"GF3", :class => 'form-control text-center', :value => 0  %>
+                              <%= g1.hidden_field :country_id, id:"F3", :value => @calendars[10].country_id %>
+                              <%  end %>
+
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text" id="">vs</span>
+                              </div>
+                              <%=  p32.fields_for :goal_pools do |g2| %>
+                                <%= g2.number_field :cantidad, id:"GF4", :class => 'form-control text-center', :value => 0  %>
+                                <%= g2.hidden_field :country_id, id:"F4", :value => @calendars[11].country_id %>
+                                <%  end %>
+													</div>
+											    </td>
+											    <td>
+		                      						<img id = "IF4"  src="<%= @calendars[63].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p33| %>
+                        <%= p33.hidden_field :calendar_id, :value => @calendars[64].id %>
+										    <tr>
+											    <td>
+			                      					<img id = "IF5"  src="<%= @calendars[64].country%>I.jpg">
+											    </td>
+										      	<td>
+											      	<h6 class="text-center">
+			                        					<%= @calendars[64].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p33.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GF5", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"F5", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p33.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GF6", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"F6", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+						                          	<img id = "IF6"  src="<%= @calendars[65].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+										</tbody>
+									</table>
+								</div>
+						    </div>
+						    <div class="col-sm-6 grupo11">
+						    	<div class="container containerGrupo11">
+									<table class="table">
+										<tbody>
+                      <%=  f1.fields_for :predictions do |p34| %>
+                      <%= p34.hidden_field :calendar_id, :value => @calendars[66].id %>
+										    <tr>
+											    <td>
+			                      					<img id = "IF7"  src="<%= @calendars[66].country%>I.jpg">
+											    </td>
+										      	<td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[66].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p34.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GF7", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"F7", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p34.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GF8", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"F8", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+										      		<img id = "IF8"  src="<%= @calendars[67].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p35| %>
+                        <%= p35.hidden_field :calendar_id, :value => @calendars[68].id %>
+										    <tr>
+											    <td>
+		                      						<img id = "IF9"  src="<%= @calendars[68].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[68].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											    	  	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                  <%=  p35.fields_for :goal_pools do |g1| %>
+                                  <%= g1.number_field :cantidad, id:"GF9", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g1.hidden_field :country_id, id:"F9", :value => @calendars[10].country_id %>
+                                  <%  end %>
+
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text" id="">vs</span>
+                                  </div>
+                                  <%=  p35.fields_for :goal_pools do |g2| %>
+                                    <%= g2.number_field :cantidad, id:"GF10", :class => 'form-control text-center', :value => 0  %>
+                                    <%= g2.hidden_field :country_id, id:"F10", :value => @calendars[11].country_id %>
+                                    <%  end %>
+														</div>
+											    </td>
+											    <td>
+		                      						<img id = "IF10"  src="<%= @calendars[69].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p36| %>
+                        <%= p36.hidden_field :calendar_id, :value => @calendars[70].id %>
+										    <tr>
+										      	<td>
+		                    						<img id = "IF11"  src="<%= @calendars[70].country%>I.jpg">
+										      	</td>
+										      	<td>
+											      	<h6 class="text-center">
+			                        					<%= @calendars[70].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p36.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GF11", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"F11", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p36.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GF12", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"F12", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+		                      						<img id = "IF12"  src="<%= @calendars[71].country%>D.jpg">
+										     	</td>
+										    </tr>
+                        <% end %>
+										</tbody>
+									</table>
+								</div>
+						    </div>
+						</div>
+					</div>
+				</div>
+		<!--GRUPO F/ -------------------------------------------------------------->
+
+
+		<!--GRUPO G -------------------------------------------------------------->
+				<div id="grupoG" class="container navIndexGrupo112">
+	          		<table>
+	          			<tr>
+	          				<th scope="col">Grupo <%= @calendars[72].grupo %></th>
+						    <th scope="col" class="grupo11Tabla">Clasificado 1<%= @calendars[72].grupo %></th>
+						    <th scope="col" class="grupo11Tabla">Clasificado 2<%= @calendars[72].grupo %></th>
+					    </tr>
+	          		</table>
+				</div>
+				<div id="bodygrupoG">
+					<div class="container container112">
+						<div class="row vdivide">
+					  		<div class="col-sm-6 grupo11">
+						    	<div class="container containerGrupo11">
+									<table class="table">
+										<tbody>
+                      <%=  f1.fields_for :predictions do |p37| %>
+                      <%= p37.hidden_field :calendar_id, :value => @calendars[72].id %>
+										    <tr>
+											    <td>
+						                            <img id = "IG1"  src="<%= @calendars[72].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[72].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p37.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GG1", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"G1", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p37.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GG2", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"G2", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+											    </td>
+											    <td>
+						                            <img id = "IG2"  src="<%= @calendars[73].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p38| %>
+                        <%= p38.hidden_field :calendar_id, :value => @calendars[74].id %>
+										    <tr>
+											    <td>
+						                            <img id = "IG3"  src="<%= @calendars[74].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+		                        						<%= @calendars[74].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											    	<div class="input-group input-group-sm align-middle versusGrupo11">
+                              <%=  p38.fields_for :goal_pools do |g1| %>
+                              <%= g1.number_field :cantidad, id:"GG3", :class => 'form-control text-center', :value => 0  %>
+                              <%= g1.hidden_field :country_id, id:"G3", :value => @calendars[10].country_id %>
+                              <%  end %>
+
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text" id="">vs</span>
+                              </div>
+                              <%=  p38.fields_for :goal_pools do |g2| %>
+                                <%= g2.number_field :cantidad, id:"GG4", :class => 'form-control text-center', :value => 0  %>
+                                <%= g2.hidden_field :country_id, id:"G4", :value => @calendars[11].country_id %>
+                                <%  end %>
+													</div>
+											    </td>
+											    <td>
+		                      						<img id = "IG4"  src="<%= @calendars[75].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p39| %>
+                        <%= p39.hidden_field :calendar_id, :value => @calendars[76].id %>
+										    <tr>
+											    <td>
+			                      					<img id = "IG5"  src="<%= @calendars[76].country%>I.jpg">
+											    </td>
+										      	<td>
+											      	<h6 class="text-center">
+			                        					<%= @calendars[76].fecha.strftime("%d / %m / %Y")  %> - <%= @calendars[76].hora.strftime("%I:%M %p")%>
+			                        					<!-- 19 de Junio 2018 -->
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p39.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GG5", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"G5", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p39.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GG6", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"G6", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+						                            <img id = "IG6"  src="<%= @calendars[77].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+										</tbody>
+									</table>
+								</div>
+						    </div>
+						    <div class="col-sm-6 grupo11">
+						    	<div class="container containerGrupo11">
+									<table class="table">
+										 <tbody>
+                       <%=  f1.fields_for :predictions do |p40| %>
+                       <%= p40.hidden_field :calendar_id, :value => @calendars[78].id %>
+										    <tr>
+										      	<td>
+		                      						<img id = "IG7"  src="<%= @calendars[78].country%>I.jpg">
+										      	</td>
+										      	<td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[78].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p40.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GG7", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"G7", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p40.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GG8", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"G8", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+										      		<img id = "IG8"  src="<%= @calendars[79].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p41| %>
+                        <%= p41.hidden_field :calendar_id, :value => @calendars[80].id %>
+										    <tr>
+											    <td>
+		                      						<img id = "IG9"  src="<%= @calendars[80].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[80].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											    	  	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                  <%=  p41.fields_for :goal_pools do |g1| %>
+                                  <%= g1.number_field :cantidad, id:"GG9", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g1.hidden_field :country_id, id:"G9", :value => @calendars[10].country_id %>
+                                  <%  end %>
+
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text" id="">vs</span>
+                                  </div>
+                                  <%=  p41.fields_for :goal_pools do |g2| %>
+                                    <%= g2.number_field :cantidad, id:"GG10", :class => 'form-control text-center', :value => 0  %>
+                                    <%= g2.hidden_field :country_id, id:"G10", :value => @calendars[11].country_id %>
+                                    <%  end %>
+														</div>
+											    </td>
+											    <td>
+		                      						<img id = "IG10"  src="<%= @calendars[81].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p42| %>
+                        <%= p42.hidden_field :calendar_id, :value => @calendars[82].id %>
+										    <tr>
+										      	<td>
+		                    						<img id = "IG11"  src="<%= @calendars[82].country%>I.jpg">
+										      	</td>
+										      	<td>
+											      	<h6 class="text-center">
+			                        					<%= @calendars[82].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p42.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GG11", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"G11", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p42.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GG12", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"G12", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+		                      						<img id = "IG12"  src="<%= @calendars[83].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+										</tbody>
+									</table>
+								</div>
+						    </div>
+					    </div>
+					</div>
+				</div>
+		<!--GRUPO G/ -------------------------------------------------------------->
+
+
+		<!--GRUPO H -------------------------------------------------------------->
+				<div id="grupoH" class="container navIndexGrupo112">
+	          		<table>
+	          			<tr>
+	          				<th scope="col">Grupo <%= @calendars[84].grupo %></th>
+						    <th scope="col" class="grupo11Tabla">Clasificado 1<%= @calendars[84].grupo %></th>
+						    <th scope="col" class="grupo11Tabla">Clasificado 2<%= @calendars[84].grupo %></th>
+					    </tr>
+	          		</table>
+				</div>
+				<div id="bodygrupoH">
+					<div class="container container112">
+						<div class="row vdivide">
+					  		<div class="col-sm-6 grupo11">
+						    	<div class="container containerGrupo11">
+									<table class="table">
+										 <tbody>
+                       <%=  f1.fields_for :predictions do |p43| %>
+                       <%= p43.hidden_field :calendar_id, :value => @calendars[84].id %>
+										    <tr>
+											    <td>
+						                            <img id = "IH1"  src="<%= @calendars[84].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[84].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p43.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GH1", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"H1", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p43.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GH2", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"H2", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+											    </td>
+											    <td>
+						                            <img id = "IH2"  src="<%= @calendars[85].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p44| %>
+                        <%= p44.hidden_field :calendar_id, :value => @calendars[86].id %>
+										    <tr>
+											    <td>
+						                            <img id = "IH3"  src="<%= @calendars[86].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+		                        						<%= @calendars[86].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											    	<div class="input-group input-group-sm align-middle versusGrupo11">
+                              <%=  p44.fields_for :goal_pools do |g1| %>
+                              <%= g1.number_field :cantidad, id:"GH3", :class => 'form-control text-center', :value => 0  %>
+                              <%= g1.hidden_field :country_id, id:"H3", :value => @calendars[10].country_id %>
+                              <%  end %>
+
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text" id="">vs</span>
+                              </div>
+                              <%=  p44.fields_for :goal_pools do |g2| %>
+                                <%= g2.number_field :cantidad, id:"GH4", :class => 'form-control text-center', :value => 0  %>
+                                <%= g2.hidden_field :country_id, id:"H4", :value => @calendars[11].country_id %>
+                                <%  end %>
+													</div>
+											    </td>
+											    <td>
+		                      						<img id = "IH4"  src="<%= @calendars[87].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p45| %>
+                        <%= p45.hidden_field :calendar_id, :value => @calendars[88].id %>
+										    <tr>
+										      	<td>
+		                      					    <img id = "IH5"  src="<%= @calendars[88].country%>I.jpg">
+										      	</td>
+										      	<td>
+											      	<h6 class="text-center">
+			                        					<%= @calendars[88].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p45.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GH5", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"H5", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p45.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GH6", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"H6", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+						                            <img id = "IH6"  src="<%= @calendars[89].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+										</tbody>
+									</table>
+								</div>
+						    </div>
+						    <div class="col-sm-6 grupo11">
+						    	<div class="container containerGrupo11">
+									<table class="table">
+										<tbody>
+                      <%=  f1.fields_for :predictions do |p46| %>
+                      <%= p46.hidden_field :calendar_id, :value => @calendars[90].id %>
+										    <tr>
+										      	<td>
+		                      						<img id = "IH7"  src="<%= @calendars[90].country%>I.jpg">
+										      	</td>
+										      	<td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[90].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                <%=  p46.fields_for :goal_pools do |g1| %>
+                                <%= g1.number_field :cantidad, id:"GH7", :class => 'form-control text-center', :value => 0  %>
+                                <%= g1.hidden_field :country_id, id:"H7", :value => @calendars[10].country_id %>
+                                <%  end %>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">vs</span>
+                                </div>
+                                <%=  p46.fields_for :goal_pools do |g2| %>
+                                  <%= g2.number_field :cantidad, id:"GH8", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g2.hidden_field :country_id, id:"H8", :value => @calendars[11].country_id %>
+                                  <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+										      		<img id = "IH8"  src="<%= @calendars[91].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p47| %>
+                        <%= p47.hidden_field :calendar_id, :value => @calendars[92].id %>
+										    <tr>
+											    <td>
+		                      						<img id = "IH9"  src="<%= @calendars[92].country%>I.jpg">
+											    </td>
+											    <td>
+											      	<h6 class="text-center">
+							                            <%= @calendars[92].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											    	  	<div class="input-group input-group-sm align-middle versusGrupo11">
+                                  <%=  p47.fields_for :goal_pools do |g1| %>
+                                  <%= g1.number_field :cantidad, id:"GH9", :class => 'form-control text-center', :value => 0  %>
+                                  <%= g1.hidden_field :country_id, id:"H9", :value => @calendars[10].country_id %>
+                                  <%  end %>
+
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text" id="">vs</span>
+                                  </div>
+                                  <%=  p47.fields_for :goal_pools do |g2| %>
+                                    <%= g2.number_field :cantidad, id:"GH10", :class => 'form-control text-center', :value => 0  %>
+                                    <%= g2.hidden_field :country_id, id:"H10", :value => @calendars[11].country_id %>
+                                    <%  end %>
+														</div>
+											    </td>
+											    <td>
+		                      						<img id = "IH10"  src="<%= @calendars[93].country%>D.jpg">
+											    </td>
+										    </tr>
+                        <% end %>
+                        <%=  f1.fields_for :predictions do |p48| %>
+                        <%= p48.hidden_field :calendar_id, :value => @calendars[94].id %>
+										    <tr>
+										      	<td>
+		                    						<img id = "IH11"  src="<%= @calendars[94].country%>I.jpg">
+										      	</td>
+										      	<td>
+											      	<h6 class="text-center">
+			                        					<%= @calendars[94].fecha.strftime("%d / %m / %Y")  %>
+											      	</h6>
+											      	<div class="input-group input-group-sm align-middle versusGrupo11">
+                              <%=  p48.fields_for :goal_pools do |g1| %>
+                              <%= g1.number_field :cantidad, id:"GH11", :class => 'form-control text-center', :value => 0  %>
+                              <%= g1.hidden_field :country_id, id:"H11", :value => @calendars[10].country_id %>
+                              <%  end %>
+
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text" id="">vs</span>
+                              </div>
+                              <%=  p48.fields_for :goal_pools do |g2| %>
+                                <%= g2.number_field :cantidad, id:"GH12", :class => 'form-control text-center', :value => 0  %>
+                                <%= g2.hidden_field :country_id, id:"H12", :value => @calendars[11].country_id %>
+                                <%  end %>
+													</div>
+										      	</td>
+										      	<td>
+		                      						<img id = "IH12"  src="<%= @calendars[95].country%>D.jpg">
+										      	</td>
+										    </tr>
+                        <% end %>
+										</tbody>
+									</table>
+								</div>
+						    </div>
+					    </div>
+					</div>
+				</div>
+		<!--GRUPO H/ -------------------------------------------------------------->
+
+  </div>
+
+  <button type="button" id="calcular_octavos" class="btn btn-info">Calcular Clasificados Octavos de Final</button>
+
+
+
+	<div class="container navIndexGrupo113 navTopGrupo11 d-flex justify-content-center">
+		<h3>Octavos de Final</h3>
+	</div>
+	<div id="faseOctavosAcodeon">
+		<div class="d-flex justify-content-center">
+			<div class="col col-lg-2 colGrupo11">
+			</div>
+			<div class="col col-lg-8 colGrupo11">
+				<table class="table tableGrupo11">
+					<tbody>
+
+					    <tr id="partido1Octavos">
+						    <td>
+						      	<img id="imgC1C">
+						      	Clasificado 1
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                          	<%= @calendars_octavos[0].fecha.strftime("%d / %m / %Y")  %>  - W50
+                           <!-- 30 de Junio 2018 - W50 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgC2D">
+						      	Clasificado 2D
+						    </td>
+					    </tr>
+
+					 	<tr id="partido2Octavos">
+						    <td>
+						      	<img id="imgC1A">
+						      	Clasificado 1A
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                          <%= @calendars_octavos[1].fecha.strftime("%d / %m / %Y")  %>  - W49
+                          <!-- 30 de Junio 2018 - W49 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgC2B">
+						      	Clasificado 2B
+						    </td>
+					    </tr>
+
+					    <tr id="partido3Octavos">
+						    <td>
+						      	<img id="imgC1B">
+						      	Clasificado 1B
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                         <%= @calendars_octavos[2].fecha.strftime("%d / %m / %Y")  %>  - W51
+                          <!-- 01 de Julio 2018 - W51 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgC2A">
+						      	Clasificado 2A
+						    </td>
+					    </tr>
+
+					    <tr id="partido4Octavos">
+						    <td>
+						      	<img id="imgC1D">
+						      	Clasificado 1D
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                        <%= @calendars_octavos[3].fecha.strftime("%d / %m / %Y")  %>  - W52
+                          <!-- 01 de Julio 2018 - W52 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgC2C">
+						      	Clasificado 2C
+						    </td>
+					    </tr>
+					    <tr id="partido5Octavos">
+						    <td>
+						      	<img id="imgC1E">
+						      	Clasificado 1E
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                          <%= @calendars_octavos[4].fecha.strftime("%d / %m / %Y")  %>  - W53
+                          <!-- 02 de Julio 2018 - W53 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgC2F">
+						      	Clasificado 2F
+						    </td>
+					    </tr>
+
+					    <tr id="partido6Octavos">
+						    <td>
+						      	<img id="imgC1G">
+						      	Clasificado 1G
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                          <%= @calendars_octavos[5].fecha.strftime("%d / %m / %Y")  %>  - W54
+                          <!-- 02 de Julio 2018 - W54 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgC2H">
+						      	Clasificado 2H
+						    </td>
+					    </tr>
+
+
+					    <tr id="partido7Octavos">
+						    <td>
+						      	<img id="imgC1F">
+						      	Clasificado 1F
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                          <%= @calendars_octavos[6].fecha.strftime("%d / %m / %Y")  %>  - W55
+                          <!-- 03 de Julio 2018 - W55 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/><input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/><input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgC2E">
+						      	Clasificado 2E
+						    </td>
+					    </tr>
+
+
+					    <tr id="partido8Octavos">
+						    <td>
+						      	<img id="imgC1H">
+						      	Clasificado 1H
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                          <%= @calendars_octavos[7].fecha.strftime("%d / %m / %Y")  %>  - W56
+                          <!-- 03 de Julio 2018 - W56 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/><input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/><input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgC2G">
+						      	Clasificado 2G
+						    </td>
+					    </tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col col-lg-2 colGrupo11">
+			</div>
+		</div>
+	</div>
+
+  <button type="button" id="calcular_cuartos" class="btn btn-info">Calcular Clasificados Cuartos de Final</button>
+
+
+	<div class="container navIndexGrupo113 navTopGrupo11 d-flex justify-content-center">
+	<h3>Cuartos de Final</h3>
+	</div>
+	<div id="faseCuartosAcodeon">
+		<div class="d-flex justify-content-center">
+			<div class="col col-lg-2 colGrupo11">
+			</div>
+			<div class="col col-lg-8 colGrupo11">
+				<table class="table tableGrupo11">
+					<tbody>
+
+					    <tr id="partido1Cuartos">
+						    <td>
+						      	<img id="imgCW49">
+						      	Clasificado W49
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                          <%= @calendars_cuartos[0].fecha.strftime("%d / %m / %Y")  %>  - W57
+                          <!-- 06 de Julio 2018 - W57 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/><input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/><input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgCW50">
+						      	Clasificado W50
+						    </td>
+					    </tr>
+
+					 	<tr id="partido2Cuartos">
+						    <td>
+						      	<img id="imgCW53">
+						      	Clasificado W53
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                          <%= @calendars_cuartos[1].fecha.strftime("%d / %m / %Y")  %>  - W58
+                          <!-- 06 de Julio 2018 - W58 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/><input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div><input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/><input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgCW54">
+						      	Clasificado W54
+						    </td>
+					    </tr>
+
+					    <tr id="partido3Cuartos">
+						    <td>
+						      	<img id="imgCW55">
+						      	Clasificado W55
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                          <%= @calendars_cuartos[2].fecha.strftime("%d / %m / %Y")  %>  - W60
+                          <!-- 07 de Julio 2018 - W60 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgCW56">
+						      	Clasificado W56
+						    </td>
+					    </tr>
+
+
+					    <tr id="partido4Cuartos">
+						    <td>
+						      	<img id="imgCW51">
+						      	Clasificado W51
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                          <%= @calendars_cuartos[3].fecha.strftime("%d / %m / %Y")  %>  - W59
+                          <!-- 07 de Julio 2018 - W59 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgCW52">
+						      	Clasificado W52
+						    </td>
+					    </tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col col-lg-2 colGrupo11">
+			</div>
+		</div>
+	</div>
+
+	  <button type="button" id= "Calcular_Semifinal" class="btn btn-info">Calcular Clasificados Semi Final</button>
+
+	<div class="container navIndexGrupo113 navTopGrupo11 d-flex justify-content-center">
+		<h3>Semi Final</h3>
+	</div>
+	<div id="faseSemiFinalAcodeon">
+		<div class="d-flex justify-content-center">
+			<div class="col col-lg-2 colGrupo11">
+			</div>
+			<div class="col col-lg-8 colGrupo11">
+				<table class="table tableGrupo11">
+					<tbody>
+					    <tr id="partido1SemiFinal">
+						    <td>
+						      	<img id="imgCW57">
+						      	Clasificado W57
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                          <%= @calendars_semifinal[0].fecha.strftime("%d / %m / %Y")  %>  - W61
+                          <!-- 10 de Julio 2018 - W61 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgCW58">
+						      	Clasificado W58
+						    </td>
+					    </tr>
+					 	<tr id="partido2SemiFinal">
+						    <td>
+						      	<img id="imgCW53">
+						      	Clasificado W59
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                          <%= @calendars_semifinal[1].fecha.strftime("%d / %m / %Y")  %>  - W62
+                          <!-- 11 de Julio 2018 - W62 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgCW54">
+						      	Clasificado W60
+						    </td>
+					    </tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col col-lg-2 colGrupo11">
+			</div>
+		</div>
+	</div>
+
+	  <button type="button" id="calcular_final" class="btn btn-info">Calcular Clasificados Final</button>
+
+	<div class="container navIndexGrupo113 navTopGrupo11 d-flex justify-content-center">
+		<h3>Tercer Puesto</h3>
+	</div>
+	<div id="faseTercerPuestoAcodeon">
+		<div class="d-flex justify-content-center">
+			<div class="col col-lg-2 colGrupo11">
+			</div>
+			<div class="col col-lg-8 colGrupo11">
+				<table class="table tableGrupo11">
+					<tbody>
+					    <tr id="partido1TercerPuesto">
+						    <td>
+						      	<img id="imgCL61">
+						      	Clasificado L61
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                          <%= @calendars_tercer.first.fecha.strftime("%d / %m / %Y")  %>
+                          <!-- 14 de Julio 2018 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgCL62">
+						      	Clasificado L62
+						    </td>
+					    </tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col col-lg-2 colGrupo11">
+			</div>
+		</div>
+	</div>
+
+	<div class="container navIndexGrupo113 navTopGrupo11 d-flex justify-content-center">
+		<h3>Final</h3>
+	</div>
+	<div id="faseFinalAcodeon">
+		<div class="d-flex justify-content-center">
+			<div class="col col-lg-2 colGrupo11">
+			</div>
+			<div class="col col-lg-8 colGrupo11">
+				<table class="table tableGrupo11">
+					<tbody>
+					    <tr id="partido1TercerPuesto">
+						    <td>
+						      	<img id="imgCW61">
+						      	Clasificado W61
+						    </td>
+						    <td>
+						    	<div class="d-flex justify-content-center">
+						    		<div class="d-flex flex-column">
+									    <div class="p-2">
+									    	<h6 class="text-center">
+                          <%= @calendars_final.first.fecha.strftime("%d / %m / %Y")  %>
+                          <!-- 15 de Julio 2018 -->
+							      			</h6>
+									    </div>
+									    <div class="p-2">
+									    	<div class="input-group input-group-sm align-middle versusGrupo11 versusGrupo112">
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+                          <div class="input-group-prepend">
+                              <span class="input-group-text" id="">vs</span>
+                          </div>
+                          <input type="number" min="0" value=0 id= "goles1" class="form-control text-center"/>
+											</div>
+									    </div>
+									</div>
+						    	</div>
+						    </td>
+						    <td>
+						    	<img id="imgCW62">
+						      	Clasificado W62
+						    </td>
+					    </tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col col-lg-2 colGrupo11">
+			</div>
+		</div>
+	</div>
+
+    <div class="d-flex justify-content-center">
+		<button type="submit" class="btn btn-primary btn-lg btn-block botonGuardarQuiniela">Completado</button>
+    </div>
+    <% end %>
+</body>

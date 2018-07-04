@@ -1,0 +1,43 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+
+
+<div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card card-outline-info">
+                  <div class="card-header">
+                    <h4 class="m-b-0 text-white" style="text-align: center;">Estadio</h4>
+                  </div>
+                  <div class="card-body">
+                      <h3 class="card-title m-t-15" style="text-align: center;">Información</h3>
+                      <hr>
+                        <div class="form-group" align="center">
+                          <strong style="color: #1976d2;">Ciudad:</strong>
+                          <%= @stadium.ciudad %>
+                        </div>
+
+                        <div class="form-group" align="center">
+                          <strong style="color: #1976d2;">Capacidad:</strong>
+                          <%= @stadium.capacidad %>
+                        </div>
+
+                        <div class="form-group" align="center">
+                          <strong style="color: #1976d2;">Nombre:</strong>
+                          <%= @stadium.nombre %>
+                        </div>
+                      <div class="form-group" align="center">
+                        <%= link_to edit_stadium_path(@stadium), class: 'btn btn-warning' do%>
+                          <i class="fa fa-pencil"></i>
+                          Editar
+                      <%end%>
+                      <%= link_to stadia_path, class: 'btn btn-danger' do%>
+                          <i class="fa fa-angle-left"></i>
+                          Atrás
+                      <%end%>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container-fluid">
+  <div class ="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive m-t-40">
+
+             <div class="panel-body">
+              <%if @stadia.empty? %>
+                <div class="alert alert-warning" role="alert">
+                  <span class="sr-only">Alerta:</span>
+                  Aún no existen estadios
+                </div>
+              <%else%>
+
+                  <table id="myTable" class="table table-bordered table-striped">
+                    <h1 align="center">Estadios</h1>
+                        <thead>
+                          <tr>
+                            <th style="text-align: center;">Ciudad</th>
+                            <th style="text-align: center;">Capacidad</th>
+                            <th style="text-align: center;">Nombre</th>
+                            <th colspan="3" style="text-align: center;">Acción</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <% @stadia.each do |stadium| %>
+                            <tr>
+                              <td><%= stadium.ciudad %></td>
+                              <td><%= stadium.capacidad %></td>
+                              <td><%= stadium.nombre %></td>
+                              <td style="text-align: center;"><%= link_to  stadium, class: 'btn btn-info' do%>
+                                <i class="fa fa-eye"></i>
+                                Mostrar
+                                <%end%>
+                              </td>
+                              <td style="text-align: center;"><%= link_to edit_stadium_path(stadium), class: 'btn btn-warning' do%>
+                                <i class="fa fa-pencil"></i>
+                                Editar
+                                <%end%>
+                              </td>
+                              <td style="text-align: center;"><%= link_to  stadium, class: 'btn btn-danger', method: :delete, data: { confirm: '¿Esta seguro que desea eliminar el estadio "' + stadium.nombre + '"?'} do%>
+                                <i class="fa fa-trash"></i>
+                                Eliminar
+                                <%end%>
+                              </td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                      <br>
+                  </table>
+
+              <%end%>
+
+
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-6" align="left">
+            <%= link_to 'Agregar estadio', new_stadium_path, class: 'btn btn-success'%>
+            <%= link_to 'Ver Calendario', calendars_url, class: 'btn btn-success'%>
+          </div>
+          <div class="col-sm-6" align="right">
+            <%= will_paginate @stadia, renderer: BootstrapPagination::Rails %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

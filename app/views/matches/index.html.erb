@@ -1,0 +1,97 @@
+<div id = "calendariogen">
+    <div class = "container">
+    <p id="notice"><%= notice %></p>
+     <!-- <div class = "row"> -->
+        <div class = "text-center">
+          <h3></h3>
+        </div>
+     
+  <div class="container">
+      <div class = "text-center">
+          <h3>Partidos</h3>
+            <p> Visualiza el calendario de los partidos.</p>
+        </div>
+     <!--</div> -->
+    </div>
+  
+
+  <!--  OBTENER LOS PAISES PARA NOMBRARLOS, SEGUN LOS PARTIDOS. COMO CONSULTARLOS? SON SOLO LOS RELACIONADOS, NO TODOS-->
+  
+<a href="/tiemporeal">IR A TIEMPO REAL</a>
+
+    <% @calendarios.each do |calendar| %>
+  
+    <div class = "card">
+
+      <div class="card-header" max-width: 18px id="headingOne" data-toggle="collapse" data-target="#<%= calendar[0].calendar_id%>" aria-expanded="true" aria-controls="<%= calendar[0].calendar_id%>">
+
+           <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#<%= calendar[0].calendar_id%>" aria-expanded="true" aria-controls="<%= calendar[0].calendar_id%>">
+          <%= calendar[0].calendar.fecha.strftime("%A %d %B") %>     <!-- Fecha del partido -->
+            </h5>
+            </button>
+      </div>
+
+
+            <div id="<%= calendar[0].calendar_id%>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="background-color:#eaf7f5; ">
+              
+              <div class="card-body">
+                  
+                          <table class="table">
+                           <tbody>
+                            <tr>
+                               <td>
+                                    <p>Grupo: <%= calendar[0].country.grupo %> </p>   <!-- Grupo del partido -->
+                              <p>Fecha: <%= calendar[0].calendar.fecha.strftime("%d %B") %> </p>  <!-- Fecha del partido -->
+                              <p>Hora Local: <%= calendar[0].calendar.hora.strftime("%H %M") %> </p>  <!-- Hora del partido-->
+                               </td>
+                               <td>
+                              <div class="bandera_h040">
+                                <img src="<%= calendar[0].country.bandera+"D.jpg"%>"> <!-- Imagen del pais de la izquierda -->
+                              </div>
+                               </td>
+                               <td>
+                                   <div class="centro_h040">
+                                   <p></p>
+                                   </div>
+                               </td>
+                               <td>
+                                   <div class="centro_h040">
+                                   <br></b>
+                                <p>VS</p>
+                                   </div>
+                               </td>
+                               <td>
+                                   <div class="centro_h040">
+                                   <p></p>
+                                   </div>
+                               </td>
+                               <td>
+                      <div class="bandera_h040">
+                                  <img src="<%= calendar[1].country.bandera+"I.jpg"%>"> <!-- Imagen del pais de la derecha -->
+                              </div>
+                               </td>
+                               <td>
+                                    <div class="stadium">
+                                <br></b><br></b>
+                                <p> Estadio: <%= calendar[0].calendar.stadium.nombre %> </p>  <!-- Nombre del estadio del partido -->
+                                <p> Ciudad: <%= calendar[0].calendar.stadium.ciudad %> </p>  <!-- Nombre de la ciudad del partido -->
+                                    </div>
+                               </td>
+                              
+                           </tr>
+                           </tbody>
+                          </table>
+              
+                 
+              </div>
+            </div>
+          
+       </div>
+
+<% end %>
+  <!--container-->
+ </div>
+
+  <!--calendario origen-->
+</div>

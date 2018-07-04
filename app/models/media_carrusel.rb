@@ -1,0 +1,2 @@
+class MediaCarrusel < ApplicationRecord
+end

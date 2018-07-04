@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="login-content card">
+
+      <div align="right">
+        <%= @player.foto %>
+      </div>
+      <div>
+      <p style="color:DarkSlateGray; font-family:courier; font-size:250%;">
+        <strong><%= "#" + @player.dorsal.to_s %></strong>  
+      </p>
+      </div>
+      <p style="color:DarkSlateGray; font-family:courier; font-size:250%;">
+        <strong><%= @player.nombre + " " + @player.apellido%></strong>
+      </p>
+
+      <p style="color:DarkSlateGray; font-family:courier; font-size:150%;">
+        <strong>Fecha nacimiento:</strong>
+        <%= @player.fecha_nacimiento.strftime("%d/%m/%Y") %>
+      </p>
+
+      <p style="color:DarkSlateGray; font-family:courier; font-size:150%;">
+        <strong>Ciudad nacimiento:</strong>
+        <%= @player.ciudad_nacimiento %>
+      </p>
+
+      <p style="color:DarkSlateGray; font-family:courier; font-size:150%;">
+        <strong>Posicion:</strong>
+        <%= @player.posicion %>
+      </p>
+
+      <p style="color:DarkSlateGray; font-family:courier; font-size:150%;">
+        <strong>Apodo:</strong>
+        <%= @player.apodo %>
+      </p>
+
+      <p style="color:DarkSlateGray; font-family:courier; font-size:150%;">
+        <strong>Debut:</strong>
+        <%= @player.debut.strftime("%d/%m/%Y") %>
+      </p>
+
+      <p style="color:DarkSlateGray; font-family:courier; font-size:150%;">
+        <strong>Participaciones:</strong>
+        <%= @player.participaciones %>
+      </p>
+
+      <p style="color:DarkSlateGray; font-family:courier; font-size:150%;">
+        <strong>Goles:</strong>
+        <%= @player.goles %>
+      </p>
+      <% if user_signed_in? && current_user.admin%>
+        <p><font color = "#000000">
+          <%= link_to 'Editar', edit_player_path(@player) %> 
+          <%= link_to 'Borrar', @player, method: :delete, data: { confirm: 'Está seguro?' } %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>

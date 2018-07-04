@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Bikin - HTML Bootstrap Template</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/overwrite.css">
+  <link href="css/animate.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/carruselnews.css" rel="stylesheet" />
+  <link href="css/carruselbox.css" rel="stylesheet" />
+  <link href="css/imgdest.css" rel="stylesheet" />
+    <link href="css/ImagenesG.css" rel="stylesheet" />
+
+  
+  <!-- =======================================================
+    Theme Name: Bikin
+    Theme URL: https://bootstrapmade.com/bikin-free-simple-landing-page-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+</html>
+<% if user_signed_in? && current_user.admin == false%>
+    <h1><font color="#000000">Lo sentimos pero esta pantalla es sólo para administradores</h1>
+<% elsif user_signed_in? && current_user.admin  %>
+<div>
+    <div class = "container">
+        <title id="notice" >< Lista de Videos  ></title> <br><br>
+        <!-- <div class = "row"> -->
+                 <div class = "text-center">
+                     <h1 style="color:#000000 ">Lista de Videos</h1><br><br>
+                </div>
+        <!--</div> -->
+    </div>  
+</div>     
+
+
+
+
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <table class="table table-hover" cellpadding="15">
+        <thead >
+          <tr align="center">
+            <th style="color:#0087CC"> Video</th>
+            <th style="color:#0087CC">Título</th>
+            <th style="color:#0087CC">Descripción</th>
+            <th style="color:#0087CC">Fecha</th>
+            <th colspan="4" style="text-align: center;color:#0087CC">Opciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @media_videos.each do |media_videos| %>
+            <tr>
+              <td><iframe width="250" height="250" src="<%= media_videos.url %>"></iframe></td>
+              <td style="color:#000000 "><%= media_videos.titulo %></td>
+              <td style="color:#000000 "><%= media_videos.descripcion %></td>
+              <td style="color:#000000 "><%= media_videos.fecha %></td>
+              <td ><a class="btn btn-mini" style="background-color: #00FF00; color: #fff" <%= link_to 'Mostrar' , media_videos %>  </a></td>
+              <td><a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to 'Editar' , edit_media_video_path(media_videos) %>  </a></td>
+              <td><a class="btn btn-mini" style="background-color: #FF0000; color: #fff" <%= link_to 'Borrar' , media_videos, method: :delete, data: { confirm: 'Estás Seguro?' } %>  </a></td>
+              
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<br>
+
+
+
+            <% end %>
+
+<a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to 'Home Administrador', 'administrator/plantillas/index' %>  </a>
+<a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to 'Home Usuario' , root_path %>  </a>

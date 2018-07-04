@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Posesion:</strong>
+  <%= @match.posesion %>
+</p>
+
+<p>
+  <strong>Calendar:</strong>
+  <%= @match.calendar %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @match.country %>
+</p>
+
+<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Back', matches_path %>

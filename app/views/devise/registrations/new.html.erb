@@ -1,0 +1,84 @@
+        <div class="unix-login">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <div class="login-content card">
+                            <div class="login-form">
+                                <h1 class="mine">REGISTRO</h1>
+                                
+                                   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name) ) do |f| %>
+                                      <%= f.error_notification %>
+										
+										<div class="form-group">	
+                                        		<%= f.input :cedula, required: true, autofocus: true,maxlength:8,minlength:6,  hint: "Acepta sólo valores numéricos",placeholder:"Ejemplo: 20175436"%>
+										</div>
+										<div class="form-group">
+                                        		<%= f.input :email, label: "Correo", required: true, autofocus: true, maxlength:25   %>
+                                        </div>
+                                        <div class="form-group">
+                                        		<%= f.input :password, required: true,maxlength:20, hint: ("#{@minimum_password_length} Caracteres mínimos" if @minimum_password_length) %>
+                                        </div>
+                                        <div class="form-group">
+                                        		<%= f.input :password_confirmation, required: true, maxlength:20  %>
+                                        </div>
+                                        <div class="form-group">
+                                        		<%= f.input :nombre, label: "Nombre", required: true, autofocus: true,maxlength:20 %>
+                                        </div>		
+                                        <div class="form-group">
+                                        		<%= f.input :apellido, label: "Apellido", required: true, autofocus: true,maxlength:20 %>
+                                        </div>		
+                                        <div class="form-group">
+                                        		<%= f.input :telefono, label: "Teléfono", required: true, autofocus: true, maxlength:11,placeholder:"Ejemplo: 04146219347"%>
+                                        </div>
+                                        <div class="form-group"> 
+
+                                                 <label>Fecha de nacimiento:</label>        
+                                                <%= f.date_field :nacimiento, max:'2010-01-01',min:'1900-01-01',value: '2010-01-01'%>
+                                        </div>  
+                                        	
+                                        <%= f.hidden_field :estatus,value: 'activo' %>
+                                        <%= f.hidden_field :admin%>
+
+                                        <p></p>
+                                        <div class="form-group">
+                                                    
+                                            <label>Escoge tu equipo favorito:</label> 
+                                                <%=f.collection_select( :country_id , Country.all, :id, :nombre)%>
+                                        <div>
+                                        <p></p>
+
+                                        <div class="form-group">
+                                        		<%= f.input :postal, required: true, autofocus: true,as: :string,maxlength:4,placeholder:"Ejemplo: 1021"%>
+                                        </div>
+                                        <div class="form-group">
+                                        		<%= f.input :twitter, label: "Twitter",  autofocus: true,maxlength:30 %>
+                                        </div>
+                                        <div class="form-group">
+                                        		<%= f.input :instagram, label: "Instagram",  autofocus: true,maxlength:30%>
+                                        </div>
+                                        <div class="form-group">
+                                        		<%= f.input :facebook, label: "Facebook",  autofocus: true,maxlength:30 %>
+                                        </div>
+
+                                      
+                                        <%= f.button :submit, "REGISTRARSE", class: 'btn btn-primary btn-flat m-b-30 m-t-30 col-md-12' %>
+                                    <% end %>
+                                      
+                                        <div class="register-link m-t-15 text-center">
+                                        <p>Ya tienes una cuenta ? <%= render "devise/shared/links" %></p>
+                                    	</div>              
+                                
+                                      
+
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+								
+									
+									
+
+

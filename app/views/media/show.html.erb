@@ -1,0 +1,32 @@
+
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="login-content card">
+
+    <p id="notice"><%= notice %></p>
+
+
+    <h1 align="center">Información de la media</h1>
+
+
+    <p>
+      <strong>Nombre:</strong>
+      <%= @medium.nombre %>
+    </p>
+    
+    <p>
+      <strong>Fecha de Publicación:</strong>
+      <%= @medium.fecha %>
+    </p>
+
+    <div align="center" class="img">
+      <img src="<%= @medium.url %>" class="img-fluid" alt="Responsive image" > 
+      <p>
+        <h3><strong>Descripcion:</strong></h3>
+        <%= @medium.descripcion %>
+      </p>
+
+    <%= link_to 'Atras ', root_path, {:style=>'color:#FFFFFF;', :class => "btn btn-primary btn-lg"} %>
+    </div>
+  </div>
+</div>

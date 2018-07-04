@@ -1,0 +1,572 @@
+<header id="header">
+  <nav class="navbar navbar-fixed-top" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+
+        <a class="navbar-brand" href="#landpage"><img src="https://i.imgur.com/PUrMDVa.png"></img></a>
+      </div>
+      <div class="collapse navbar-collapse navbar-right">
+        <ul class="nav navbar-nav">
+          <li><a href="#feature">Noticias</a></li>
+          <li><a href="/countries">Equipos</a></li>
+          <li><a href="/show_calendar/fase_grupos">Partidos</a></li>
+          <li><a href="/matches">Calendario</a></li>
+          <li><a href="#gallery">Galería</a></li>
+          <% if user_signed_in? %>
+                    <li class="active"> <%= link_to "Perfil", usuario_plantillas_index_path if current_user.admin == false  %>
+                    <li class="active"> <%= link_to "Perfil", administrator_plantillas_index_path if current_user.admin?  %>
+                    <li class="active"> <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+                    <li class="active"> <%= link_to "Iniciar Sesión", new_user_session_path%></li>
+                    <li class="active"> <%= link_to "Registrarse", new_user_registration_path %></li>
+          <% end %>
+          <li><a href="/search_result/index"><button id="search-button" class="btn" style="background-color: #015386; color: #fff"><span class="fa fa-search"></span></button></a></li>
+        </ul>
+      </div>
+    </div>
+    <!--/.container-->
+  </nav>
+  <!--/nav-->
+</header>
+<!--/header-->
+<div class="sliderim">
+    <div id="about-slider">
+      <% imgdest = Medium.where(:tipo => "imagenes").includes(:tags).where("tags.nombre" => "Destacado").order(:created_at).limit(3) %>
+      <div id="carousel-sliderim" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <% imgdest.each_with_index do |item, n| %>
+            <li data-target="#carousel-sliderim" data-slide-to="#{n}" class="#{'active' if n == 0}"></li>
+          <% end %>
+        </ol>
+
+        <div class="carousel-inner">
+
+          <div class="item active">
+            <%=image_tag imgdest.first.url, class: "img-responsive"%>
+            <div class="carousel-caption">
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
+                <h2><span><%= imgdest.first.descripcion %></span></h2>
+              </div>
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
+                <p></p>
+              </div>
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
+              </div>
+            </div>
+          </div>
+
+          <% imgdest.drop(1).each do |item| %>
+          <div class="item">
+            <%=image_tag item.url, class: "img-responsive"%>
+            <div class="carousel-caption">
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
+                <h2><span><%= item.descripcion %></span></h2>
+              </div>
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
+                <p></p>
+              </div>
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+
+
+
+      <a class="left carousel-control hidden-xs" href="#carousel-sliderim" data-slide="prev">
+        <i class="fa fa-angle-left"></i>
+      </a>
+
+      <a class=" right carousel-control hidden-xs" href="#carousel-sliderim" data-slide="next">
+        <i class="fa fa-angle-right"></i>
+      </a>
+    </div>
+    <!--/#carousel-slider-->
+  </div>
+  <!--/#about-slider-->
+</div>
+<!--/#slider-->
+
+<!-- SLIDER DE NOTICIAS -->
+
+
+
+<div id="feature">
+<div class ="container">
+<div class="row"></div>
+<div class="col-sm-12">
+
+  <div class="text-center">
+      <h3> Noticias </h3>
+      <p>Enterate de las ultimas noticias sobre el Mundial Rusia 2018</p>
+  </div>
+      <% articles = Article.last(9) %>
+  <div class="carousel slide" id="myCarousel">
+      <div class="carousel-inner">
+          <div class="item active">
+              <ul class="thumbnails">
+                <li class="col-sm-4">
+                <% art = articles.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="articles/<%= art.id%>"><img src="https://lmdiario.com.ar/download/multimedia.normal.bef83d9d67da13a9.4c75636173204c6564657a6d6130303030325f6e6f726d616c2e6a7067.jpg" alt=""></a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= art.titulo %> </h4>
+                      <a class="btn btn-mini" <%= link_to "» Leer", art%></a>
+                    </div>
+                  </div>
+                  <% articles.pop %>
+                </li>
+                <li class="col-sm-4">
+                <% art = articles.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="articles/<%= art.id%>"><img src="https://www.sportyou.es/blog/wp-content/uploads/2017/03/9-Inglaterra.jpg" alt=""></a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= art.titulo %> </h4>
+                      <a class="btn btn-mini" <%= link_to "» Leer", art %>   </a>
+                    </div>
+                  </div>
+                  <% articles.pop %>
+                </li>
+                <li class="col-sm-4">
+                <% art = articles.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="articles/<%= art.id%>"><img src="https://www.lateja.cr/resizer/4pAElAuRcdJO1NmPEw_Uebt1Drs=/1200x0/center/middle/filters:quality(100)/arc-anglerfish-arc2-prod-gruponacion.s3.amazonaws.com/public/JDGSYN26FJHQPFGJZXWAKYNLAY.jpg" alt=""></a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= art.titulo %> </h4>
+                      <a class="btn btn-mini" <%= link_to "» Leer", art %>   </a>
+                    </div>
+                  </div>
+                  <% articles.pop %>
+                </li>
+              </ul>
+            </div><!-- /Slide1 -->
+          <div class="item">
+              <ul class="thumbnails">
+                <li class="col-sm-4">
+                <% art = articles.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="articles/<%= art.id%>"><img src="http://as01.epimg.net/futbol/imagenes/2018/06/09/mundial/1528578688_325204_1528578778_noticia_normal.jpg" alt=""></a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= art.titulo %> </h4>
+                      <a class="btn btn-mini" <%= link_to "» Leer", art %></a>
+                    </div>
+                  </div>
+                  <% articles.pop %>
+                </li>
+                <li class="col-sm-4">
+                <% art = articles.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="articles/<%= art.id%>"><img src="https://assets.trome.pe/files/ec_article_multimedia_gallery/uploads/2018/06/10/5b1d38a636707.jpeg" alt=""></a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= art.titulo %> </h4>
+                      <a class="btn btn-mini" <%= link_to "» Leer", art %>   </a>
+                    </div>
+                  </div>
+                  <% articles.pop %>
+                </li>
+                <li class="col-sm-4">
+                <% art = articles.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="articles/<%= art.id%>"><img src="https://d2yoo3qu6vrk5d.cloudfront.net/images/20180604131306/000_1339yu-549x485.jpg?itok=1528543764" alt=""></a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= art.titulo %> </h4>
+                      <a class="btn btn-mini" <%= link_to "» Leer", art %>   </a>
+                    </div>
+                  </div>
+                  <% articles.pop %>
+                </li>
+              </ul>
+            </div><!-- /Slide2 -->
+          <div class="item">
+              <ul class="thumbnails">
+                <li class="col-sm-4">
+                <% art = articles.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="articles/<%= art.id%>"><img src="http://www.laprensa.hn/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=yUS5qNnjm3FsI2MGuWmcMM$daE2N3K4ZzOUsqbU5sYu8nP9FfM_AyW9l2r_Y_Tl96FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&CONTENTTYPE=image/jpeg" alt=""></a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= art.titulo %> </h4>
+                      <a class="btn btn-mini" <%= link_to "» Leer", art %>   </a>
+                    </div>
+                  </div>
+                  <% articles.pop %>
+                </li>
+                <li class="col-sm-4">
+                <% art = articles.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="articles/<%= art.id%>"><img src="http://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2018/06/09/Recortada/img_aollerm_20170619-211135_imagenes_lv_terceros_aquiles-gato-pronosticara-confederaciones_10222672-kOQD-U444250949711Ya-992x558@LaVanguardia-Web.jpg" alt=""></a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= art.titulo %> </h4>
+                      <a class="btn btn-mini" <%= link_to "» Leer", art %>   </a>
+                    </div>
+                  </div>
+                  <% articles.pop %>
+                </li>
+                <li class="col-sm-4">
+                <% art = articles.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="articles/<%= art.id%>"><img src="https://i.deportes.televisa.com/2018/06/dinamarca-vs-mexico.jpg" alt=""></a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= art.titulo %> </h4>
+                      <a class="btn btn-mini" <%= link_to "» Leer", art %>   </a>
+                    </div>
+                  </div>
+                  <% articles.pop %>
+                </li>
+              </ul>
+            </div><!-- /Slide3 -->
+      </div>
+
+
+   <nav>
+    <ul class="control-box pager">
+      <li><a data-slide="prev" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-left"></i></a></li>
+      <li><a data-slide="next" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-right"></i></li>
+    </ul>
+  </nav>
+   <!-- /.control-box -->
+  </div><!-- /#myCarousel -->
+</div><!-- /.col-xs-12 -->
+</div>
+</div>
+
+</div> <!-- FIN DE SLIDER NOTICIAS-->
+
+
+
+<!-- CARRUSEL ÚLTIMOS VIDEOS-->
+<div id="mediaVideo">
+<div class="row">
+<div class="col-sm-12">
+
+
+  <div class="text-center">
+      <h3> Últimos Videos </h3>
+      <%= link_to 'Ver Todos', media_videos_path %>
+  </div>
+
+  <% video = MediaVideo.last(12) %>
+  <div class="carousel slide" id="theCarousel">
+      <div class="carousel-inner">
+          <div class="item active">
+              <ul class="thumbnails">
+
+                <li class="col-sm-3">
+                <% vid = video.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="#">
+                        <iframe width="270" height="250" src="<%= vid.url %>"></iframe>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= vid.titulo %> </h4>
+                      <a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to "» Ver mas...", vid %>    </a>
+                    </div>
+                  </div>
+                  <% video.pop %>
+                </li>
+
+                <li class="col-sm-3">
+                <% vid = video.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="#">
+                        <iframe width="270" height="250" src="<%= vid.url %>"></iframe>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= vid.titulo %> </h4>
+                      <a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to "» Ver mas...", vid %>   </a>
+                    </div>
+                  </div>
+                  <% video.pop %>
+                </li>
+
+                <li class="col-sm-3">
+                <% vid = video.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="#">
+                        <iframe width="270" height="250" src="<%= vid.url %>"></iframe>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= vid.titulo %> </h4>
+                      <a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to "» Ver mas...", vid %>   </a>
+                    </div>
+                  </div>
+                  <% video.pop %>
+                </li>
+
+                <li class="col-sm-3">
+                <% vid = video.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="#">
+                        <iframe width="270" height="250" src="<%= vid.url %>"></iframe>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= vid.titulo %> </h4>
+                      <a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to "» Ver mas...", vid %>   </a>
+                    </div>
+                  </div>
+                  <% video.pop %>
+                </li>
+
+              </ul>
+            </div><!-- /Slide1 -->
+
+          <div class="item">
+              <ul class="thumbnails">
+
+                <li class="col-sm-3">
+                <% vid = video.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="#">
+                        <iframe width="270" height="250" src="<%= vid.url %>"></iframe>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= vid.titulo %> </h4>
+                      <a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to "» Ver mas...", vid %>   </a>
+                    </div>
+                  </div>
+                  <% video.pop %>
+                </li>
+
+                <li class="col-sm-3">
+                <% vid = video.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="#">
+                        <iframe width="270" height="250" src="<%= vid.url %>"></iframe>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= vid.titulo %> </h4>
+                      <a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to "» Ver mas...", vid %>   </a>
+                    </div>
+                  </div>
+                  <% video.pop %>
+                </li>
+
+                <li class="col-sm-3">
+                <% vid = video.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="#">
+                        <iframe width="270" height="250" src="<%= vid.url %>"></iframe>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= vid.titulo %> </h4>
+                      <a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to "» Ver mas...", vid %>   </a>
+                    </div>
+                  </div>
+                  <% video.pop %>
+                </li>
+
+                <li class="col-sm-3">
+                <% vid = video.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="#">
+                        <iframe width="270" height="250" src="<%= vid.url %>"></iframe>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= vid.titulo %> </h4>
+                      <a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to "» Ver mas...", vid %>   </a>
+                    </div>
+                  </div>
+                  <% video.pop %>
+                </li>
+
+              </ul>
+            </div><!-- /Slide2 -->
+
+          <div class="item">
+              <ul class="thumbnails">
+
+                <li class="col-sm-3">
+                <% vid = video.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="#">
+                        <iframe width="270" height="250" src="<%= vid.url %>"></iframe>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= vid.titulo %> </h4>
+                      <a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to "» Ver mas...", vid %> </a>
+                    </div>
+                  </div>
+                  <% video.pop %>
+                </li>
+
+                <li class="col-sm-3">
+                <% vid = video.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="#">
+                        <iframe width="270" height="250" src="<%= vid.url %>"></iframe>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= vid.titulo %> </h4>
+                      <a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to "» Ver mas...", vid %>   </a>                      </div>
+                  </div>
+                  <% video.pop %>
+                </li>
+
+                <li class="col-sm-3">
+                <% vid = video.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="#">
+                        <iframe width="270" height="250" src="<%= vid.url %>"></iframe>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h4> <%= vid.titulo %> </h4>
+                      <a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to "» Ver mas...", vid %>   </a>
+                    </div>
+                  </div>
+                  <% video.pop %>
+                </li>
+
+                <li class="col-sm-3">
+                <% vid = video.last() %>
+                  <div class="fff">
+                    <div class="thumbnail">
+                      <a href="#">
+                        <iframe width="270" height="250" src="<%= vid.url %>"></iframe>
+                      </a>
+                    </div>
+                    <div class="">
+                      <h4> <%= vid.titulo %> </h4>
+                      <a class="btn btn-mini" style="background-color: #015386; color: #fff" <%= link_to "» Ver mas...", vid %>   </a>
+                    </div>
+                  </div>
+                  <% video.pop %>
+                </li>
+
+              </ul>
+            </div><!-- /Slide3 -->
+      </div>
+
+
+   <nav>
+    <ul class="control-box pager">
+      <li><a data-slide="prev" href="#theCarousel" class=""><i class="glyphicon glyphicon-chevron-left" ></i></a></li>
+      <li><a data-slide="next" href="#theCarousel" class=""><i class="glyphicon glyphicon-chevron-right"></i></li>
+
+    </ul>
+
+
+  </nav>
+   <!-- /.control-box -->
+  </div><!-- /#theCarousel -->
+
+</div><!-- /.col-xs-12 -->
+</div><!-- /.ROW -->
+</div> <!-- /video -->
+<!-- FIN CARRUSEL ÚLTIMOS VIDEOS-->
+
+<!--Ultimas imagenes agregadas-->
+<div id="MediaImagen">
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="text-center">
+          <h3> Últimas imagenes </h3>
+        </div>
+         <div class="row">
+          <% medium = Medium.where(:tipo => "imagenes").includes(:tags).where("tags.nombre" => "galeria").order(:created_at).first (4) %>
+            <%medium.each do |item| %>
+              <% med = item %>
+               <figure class="effect-chico">
+                  <div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
+                     <%=link_to image_tag(med.url,size: "250x140", class: "demon-cursor",:title => med.nombre), med, class: "flipLightBox"%>
+                        <div class="caption">
+                          <h4> <%= med.nombre %> </h4>
+                        </div>
+                  </div>
+           </figure >
+                              <% end %>
+          </div>
+       </div>
+     </div>
+   </div>
+
+<!-- /.control-box -->
+</div><!-- /#myCarousel -->
+
+  <div class="container">
+    <div class="sub-footer">
+      <div class="text-center">
+        <div class="col-md-12">
+         <!--!ESTO ES PARA INVITAR USUARIO root_path-->
+         <%= link_to "Invita a un usuario", 'users/invitation/new', {:style=>'color:#FFFFFF;', :class => "btn btn-primary btn-lg"} %>
+           <!--TERMINA PARA INVITAR USUARIO -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="social-icon">
+    <div class="container">
+      <div class="col-md-6 col-md-offset-3">
+        <ul class="social-network">
+          <li><a href="#" class="fb tool-tip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#" class="twitter tool-tip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#" class="gplus tool-tip" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href="#" class="linkedin tool-tip" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="#" class="ytube tool-tip" title="You Tube"><i class="fa fa-youtube-play"></i></a></li>
+          <li><a href="#" class="dribbble tool-tip" title="Dribbble"><i class="fa fa-dribbble"></i></a></li>
+          <li><a href="#" class="pinterest tool-tip" title="Pinterest"><i class="fa fa-pinterest-square"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <div class="copyright">
+      &copy; Bikin Theme. All Rights Reserved.
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bikin
+        -->
+        <a href="https://bootstrapmade.com/">Free Bootstrap Templates</a> by BootstrapMade
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,41 @@
+
+  <div id = "calendariogen">
+    <div class = "container">
+    <p id="notice"></p>
+     <!-- <div class = "row"> -->
+        <div class = "text-center">
+          <h1>Resultados: </h1>
+          <br>
+        </div>
+     <!--</div> -->
+    </div>
+
+  <div class="container">
+    <h3>Articulos: </h3>
+    <br>
+  <% if @articles.blank? %>
+    <h4>No hay artículos que coincidan con el parámetro de búsqueda <%= params[:search] %>.</h4>
+    <% end %>
+  <% else %>
+    <% @articles.each do |article| %>
+      <p> <%= article.titulo %></p>
+      <p>  <%= article.fecha %></p>
+      <p>  <%= article.autor %></p>
+      <p>  <%= article.cuerpo %></p>
+  <% end %>
+  </div>
+  <br>
+<div class="container">
+  <h3>Multimedia: </h3>
+  <br>
+  <% if @medias.blank? %>
+    <h4>No hay multimedia que coincida con el parámetro de búsqueda <%= params[:search] %>.</h4>
+    <% end %>
+    <% @medias.each do |media| %>
+      <p> <%= media.nombre %></p>
+      <p> <%= media.fecha %></p>
+      <p> <%= media.url %></p>
+  <% end %>
+
+   </div>
+</div>

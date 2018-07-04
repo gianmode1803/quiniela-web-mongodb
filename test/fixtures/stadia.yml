@@ -1,0 +1,9 @@
+one:
+  nombre: Kaliningrado
+  ciudad: Kaliningrado
+  capacidad: 50000
+
+two:
+  nombre: MyString
+  ciudad: MyString
+  capacidad: 1

@@ -1,0 +1,106 @@
+.sliderim {
+	position: relative;
+	padding-top:110px;
+}
+
+.sliderim img {
+    width: 100%;
+    height: 525px;
+}
+
+#carousel-sliderim {
+  position: relative;
+}
+
+#carousel-sliderim .carousel-indicators {
+  bottom: 10px;
+}
+
+
+
+.carousel-indicators li {
+  border: 2px translucent #015386;
+}
+
+
+
+#carousel-sliderim a i {
+  border: 1px solid #fff;
+  border-radius:50%;
+  font-size: 30px;
+  height: 50px;
+  padding: 8px;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  color:#fff;
+}
+
+
+#carousel-sliderim a i:hover {
+  background:#015386;
+  color:#fff;
+  border: 2px traslucent #015386;
+}
+
+
+
+#carousel-sliderim
+.carousel-control {
+  width:inherit;
+}
+
+
+
+#carousel-sliderim .carousel-control.left i {
+  left: 40px;
+  top: calc(50% - 25px);
+}
+
+
+
+#carousel-sliderim .carousel-control.right i {
+  right: 40px;
+  top: calc(50% - 25px);
+}
+
+
+
+#carousel-sliderim
+.carousel-control.left,
+#carousel-sliderim
+.carousel-control.right {
+  background: none;
+}
+
+.carousel-caption {
+  position: relative;
+  top: calc(70%);
+	background: linear-gradient(transparent,black);
+}
+
+.carousel-caption  h2 {
+	font-size:35px;
+	color:#ffffff;
+  font-weight: light;
+	text-shadow: 1px 1px #010101;
+	text-align: right;
+	text-transform: uppercase;
+
+}
+
+.carousel-caption  h2 span {
+	font-size:35px;
+	color: #ffffff;
+}
+
+.carousel-caption  p {
+  font-size:20px;
+  margin-top:10px;
+  color:#ffffff;
+  font-style: oblique;
+}
+
+.carousel-inner > .item > a > img {
+	height: 525px;
+}

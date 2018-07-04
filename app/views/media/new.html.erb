@@ -1,0 +1,19 @@
+<% if user_signed_in? && current_user.admin == false%>
+    <h1><font color="#000000">Lo sentimos pero esta pantalla es sólo para administradores</h1>
+<% elsif user_signed_in? && current_user.admin  %>
+
+
+  <div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="login-content card">
+<div class="container">
+            <h1>Nueva imagen</h1>
+
+            <%= render 'form', medium: @medium %>
+
+            <%= link_to 'Back', media_path %>
+</div>
+</div>
+</div>
+</div>
+            <% end %>

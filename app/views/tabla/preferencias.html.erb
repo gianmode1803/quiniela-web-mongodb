@@ -1,0 +1,138 @@
+<body>
+  <h1 class="titulo_h029">Tabla de Equipos favoritos</h1>
+
+<div class="tabla_h029">
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Posición</th>
+      <th scope="col">País</th>
+      <th scope="col">Porcentaje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><div class="center_h029">1</div></th>
+      <td> <% if @preferencia[0] != nil %>
+              <img src="<%=@preferencia[0][0]%>I.jpg">
+          <% end %>
+      </td>
+      <td><div class="center_h029">
+        <% if @preferencia[0] != nil %>
+          <%= (@preferencia[0][1].to_i * 100)/@total %>%
+        <% end %>
+    </div></td>
+    </tr>
+    <tr>
+      <th scope="row"><div class="center_h029">2</div></th>
+      <td>
+        <% if @preferencia[1] != nil %>
+                <img src="<%=@preferencia[1][0]%>I.jpg">
+        <% end %>
+      </td>
+      <td><div class="center_h029">
+        <% if @preferencia[1] != nil %>
+          <%= (@preferencia[1][1].to_i * 100)/@total %>%
+        <% end %>
+    </div></td>
+    </tr>
+    <tr>
+      <th scope="row"><div class="center_h029">3</div></th>
+      <td> <% if @preferencia[2] != nil %>
+              <img src="<%=@preferencia[2][0]%>I.jpg">
+          <% end %>
+      </td>
+      <td><div class="center_h029">
+        <% if @preferencia[2] != nil %>
+          <%= (@preferencia[2][1].to_i * 100)/@total %>%
+        <% end %>
+      </div></td>
+    </tr>
+    <tr>
+      <th scope="row"><div class="center_h029">4</div></th>
+      <td> <% if @preferencia[3] != nil %>
+              <img src="<%=@preferencia[3][0]%>I.jpg">
+          <% end %>
+     </td>
+      <td><div class="center_h029">
+        <% if @preferencia[3] != nil %>
+          <%= (@preferencia[3][1].to_i * 100)/@total %>%
+        <% end %>
+      </div></td>
+    </tr>
+    <tr>
+      <th scope="row"><div class="center_h029">5</div></th>
+      <td> <% if @preferencia[4] != nil %>
+              <img src="<%=@preferencia[4][0]%>I.jpg">
+          <% end %>
+     </td>
+      <td><div class="center_h029">
+        <% if @preferencia[4] != nil %>
+          <%= (@preferencia[4][1].to_i * 100)/@total %>%
+        <% end %>
+      </div></td>
+    </tr>
+    <tr>
+      <th scope="row"><div class="center_h029">6</div></th>
+      <td> <% if @preferencia[5] != nil %>
+              <img src="<%=@preferencia[5][0]%>I.jpg">
+          <% end %>
+     </td>
+      <td><div class="center_h029">
+        <% if @preferencia[5] != nil %>
+          <%= (@preferencia[5][1].to_i * 100)/@total %>%
+        <% end %>
+      </div></td>
+    </tr>
+    <tr>
+      <th scope="row"><div class="center_h029">7</div></th>
+      <td> <% if @preferencia[6] != nil %>
+              <img src="<%=@preferencia[6][0]%>I.jpg">
+          <% end %>
+     </td>
+      <td><div class="center_h029">
+        <% if @preferencia[6] != nil %>
+          <%= (@preferencia[6][1].to_i * 100)/@total %>%
+        <% end %>
+      </div></td>
+    </tr>
+    <tr>
+      <th scope="row"><div class="center_h029">8</div></th>
+      <td> <% if @preferencia[7] != nil %>
+              <img src="<%=@preferencia[7][0]%>I.jpg">
+          <% end %>
+     </td>
+      <td><div class="center_h029">
+      <% if @preferencia[7] != nil %>
+        <%= (@preferencia[7][1].to_i * 100)/@total %>%
+      <% end %>
+    </div></td>
+    </tr>
+    <tr>
+      <th scope="row"><div class="center_h029">9</div></th>
+      <td> <% if @preferencia[8] != nil %>
+              <img src="<%=@preferencia[8][0]%>I.jpg">
+          <% end %>
+     </td>
+      <td><div class="center_h029">
+      <% if @preferencia[8] != nil %>
+        <%= (@preferencia[8][1].to_i * 100)/@total %>%
+      <% end %>
+    </div></td>
+    </tr>
+    <tr>
+      <th scope="row"><div class="center_h029">10</div></th>
+      <td> <% if @preferencia[9] != nil %>
+              <img src="<%=@preferencia[9][0]%>I.jpg">
+          <% end %>
+     </td>
+      <td><div class="center_h029">
+        <% if @preferencia[9] != nil %>
+          <%= (@preferencia[9][1].to_i * 100)/@total %>%
+        <% end %></div></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</body>

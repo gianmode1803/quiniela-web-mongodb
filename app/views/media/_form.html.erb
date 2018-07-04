@@ -1,0 +1,34 @@
+
+  <div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="login-content card">
+
+<%= simple_form_for(@medium) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :url, as: :file, label: "Ubicacion de la imagen", input_html: {accept: 'image/png,image/gif,image/jpeg,image/jpg'} %>
+    <%= f.input :nombre %>
+    <%= f.input :tipo %>
+    <%= f.input :fecha %>
+    <%= f.input :descripcion %>
+    <strong> tag:</strong>
+<div></div>
+    <%= f.collection_check_boxes :tag_ids,Tag.all, :id, :nombre%>
+    <div>
+    <h4>Agregue un nuevo tag</h4>
+    <%= f.fields_for :tags, medium.tags.build do |tags_fields| %>
+      <%= tags_fields.text_field :nombre %>
+    <% end %>
+    </div>  
+  </div>
+  
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+</div>
+</div>
+</div>

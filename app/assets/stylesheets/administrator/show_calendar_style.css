@@ -1,0 +1,46 @@
+div.fondo_h011{
+	background-image: url("../administrator/images/fondo_russia.jpg");
+	background-size: auto;
+	background-repeat: no-repeat;
+}
+
+.titulo_h040{
+	padding: 20px;
+}
+
+.header_h040{
+	padding: 20px;
+}
+.header_h040 li{
+	display: inline;
+	padding: 3px;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.header_h040 a{
+	color: black;
+}
+
+.header_h040 a:hover{
+	color: gray;
+}
+
+.estadio_h040 p{
+	text-align: center;
+}
+
+.bandera_h040 img{
+	padding-top: 30px;
+	padding-left: 50px;
+}
+
+.centro_h040 {
+	line-height: 150px;
+	font-size: 40px;
+}
+
+#accordion{
+	margin-left: 10%;
+	margin-right: 10%;
+}

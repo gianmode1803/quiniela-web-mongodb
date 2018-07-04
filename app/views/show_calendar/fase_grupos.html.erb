@@ -1,0 +1,3599 @@
+<body>
+	<h1 class="titulo_h040">Calendario: Fase de Grupos</h1>
+
+<div class="fondo_h040">
+
+	<ul class="header_h040">
+
+		<li>
+			<a href="http://localhost:3000/show_calendar/fase_grupos">Fase de grupos</a>
+		</li>
+		<li>
+			<a href="http://localhost:3000/show_calendar/octavos">Octavos de final</a>
+		</li>
+		<li>
+			<a href="http://localhost:3000/show_calendar/cuartos">Cuartos de final</a>
+		</li>
+		<li>
+			<a href="http://localhost:3000/show_calendar/semifinal">Semifinal</a>
+		</li>
+		<li>
+			<a href="http://localhost:3000/show_calendar/tercer_puesto">Tercer Puesto</a>
+		</li>
+		<li>
+			<a href="http://localhost:3000/show_calendar/final">Final</a>
+		</li>
+
+	</ul>
+	<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          jueves 14 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+
+      <div class="container">
+				<table class="table">
+			  <tbody>
+			    <tr>
+			      <td>
+			      	<p>Grupo A</p>
+			      	<p>14 de junio 2018</p>
+			      	<p>18:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/rusiaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[0].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[0].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/arabiaSauditaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Luzhniki Stadium</p>
+			      	<p>Moscú</p>
+			      </td>
+			    </tr>
+			</table>
+			</div>
+
+      </div>
+    </div>
+
+		<div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          viernes 15 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+
+        <div class="container">
+			<table class="table">
+			  <tbody>
+			    <tr>
+
+			      <td>
+			      	<p>Grupo A</p>
+			      	<p>15 de junio 2018</p>
+			      	<p>17:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/egiptoI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[1].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[1].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/uruguayD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Ekaterinburg Arena</p>
+			      	<p>Ekaterinburgo</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo B</p>
+			      	<p>15 de junio 2018</p>
+			      	<p>18:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/marruecosI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[2].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[2].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/iranD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>San Petersburgo Stadium</p>
+			      	<p>San Petersburgo</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo B</p>
+			      	<p>15 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/portugalI.jpg">
+			      	</div>
+			      </td>
+
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[3].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[3].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/espanaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Fisht Stadium</p>
+			      	<p>Sochi</p>
+			      </td>
+			    </tr>
+
+			</table>
+		</div>
+
+      </div>
+    </div>
+
+    <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          sábado 16 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+
+      	<div class="container">
+			<table class="table">
+			  <tbody>
+			    <tr>
+
+			      <td>
+			      	<p>Grupo C</p>
+			      	<p>16 de junio 2018</p>
+			      	<p>13:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/franciaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[4].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[4].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/australiaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Kazan Arena</p>
+			      	<p>Kazán</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo D</p>
+			      	<p>16 de junio 2018</p>
+			      	<p>16:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/argentinaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[5].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[5].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/islandiaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Spartak Stadium</p>
+			      	<p>Moscú</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo C</p>
+			      	<p>16 de junio 2018</p>
+			      	<p>19:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/peruI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[6].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[6].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/dinamarcaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Mordovia Arena</p>
+			      	<p>Saransk</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo D</p>
+			      	<p>16 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/croaciaI.jpg">
+			      	</div>
+			      </td>
+
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[7].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[7].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/nigeriaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Kaliningrad Stadium</p>
+			      	<p>Kaliningrado</p>
+			      </td>
+			    </tr>
+
+			</table>
+		</div>
+
+      </div>
+    </div>
+
+    <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          domingo 17 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+      <div class="card-body">
+
+      	<div class="container">
+			<table class="table">
+			  <tbody>
+			    <tr>
+
+			      <td>
+			      	<p>Grupo E</p>
+			      	<p>17 de junio 2018</p>
+			      	<p>16:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/costaRicaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[8].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[8].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/serbiaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Samara Arena</p>
+			      	<p>Samara</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo F</p>
+			      	<p>17 de junio 2018</p>
+			      	<p>18:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/alemaniaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[9].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[9].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/mexicoD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Luzhniki Stadium</p>
+			      	<p>Moscú</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo E</p>
+			      	<p>17 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/brasilI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[10].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[10].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/suizaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Rostov Arena</p>
+			      	<p>Rostov del Don</p>
+			      </td>
+			    </tr>
+
+			</table>
+		</div>
+
+      </div>
+    </div>
+
+    <div class="card-header" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          lunes 18 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+      <div class="card-body">
+
+      	<div class="container">
+			<table class="table">
+			  <tbody>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo F</p>
+			      	<p>18 de junio 2018</p>
+			      	<p>15:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/sueciaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[11].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[11].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/coreaDelSurD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Nizhny Novgorod Stadium</p>
+			      	<p>Nizhni Nóvgorod</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo G</p>
+			      	<p>18 de junio 2018</p>
+			      	<p>18:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/belgicaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[12].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[12].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/panamaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Fisht Stadium</p>
+			      	<p>Sochi</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo G</p>
+			      	<p>18 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/tunezI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[13].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[13].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/inglaterraD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Volgograd Arena</p>
+			      	<p>Volgogrado</p>
+			      </td>
+			    </tr>
+
+			</table>
+		</div>
+
+      </div>
+    </div>
+
+    <div class="card-header" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          martes 19 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+      <div class="card-body">
+
+      	<div class="container">
+			<table class="table">
+			  <tbody>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo H</p>
+			      	<p>19 de junio 2018</p>
+			      	<p>15:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/colombiaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[14].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[14].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/japonD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Mordovia Arena</p>
+			      	<p>Saransk</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo H</p>
+			      	<p>19 de junio 2018</p>
+			      	<p>18:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/poloniaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[15].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[15].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/senegalD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Spartak Stadium</p>
+			      	<p>Moscú</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo A</p>
+			      	<p>19 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/rusiaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[16].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[16].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/egiptoD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>San Petersburgo Stadium</p>
+			      	<p>San Petersburgo</p>
+			      </td>
+			    </tr>
+
+			</table>
+		</div>
+
+      </div>
+    </div>
+
+    <div class="card-header" id="headingSeven" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+          miércoles 20 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+      <div class="card-body">
+
+      	<div class="container">
+			<table class="table">
+			  <tbody>
+			    <tr>
+
+			      <td>
+			      	<p>Grupo B</p>
+			      	<p>20 de junio 2018</p>
+			      	<p>15:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/portugalI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[17].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[17].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/marruecosD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Luzhniki Stadium</p>
+			      	<p>Moscú</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo A</p>
+			      	<p>20 de junio 2018</p>
+			      	<p>18:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/uruguayI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[18].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[18].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/arabiaSauditaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Rostov Arena</p>
+			      	<p>Rostov del Don</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo B</p>
+			      	<p>20 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/iranI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[19].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[19].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/espanaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Kazan Arena</p>
+			      	<p>Kazán</p>
+			      </td>
+			    </tr>
+
+			</table>
+		</div>
+
+      </div>
+    </div>
+
+    <div class="card-header" id="headingEight" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+          jueves 21 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
+      <div class="card-body">
+
+      	<div class="container">
+			<table class="table">
+			  <tbody>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo C</p>
+			      	<p>21 de junio 2018</p>
+			      	<p>16:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/dinamarcaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[20].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[20].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/australiaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Samara Arena</p>
+			      	<p>Samara</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo C</p>
+			      	<p>21 de junio 2018</p>
+			      	<p>20:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/franciaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[21].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[21].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/peruD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Ekaterimburg Arena</p>
+			      	<p>Ekaterimburgo</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo D</p>
+			      	<p>21 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/argentinaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[22].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[22].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+						<td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/croaciaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Nizhny Novgorod Stadium</p>
+			      	<p>Nizhni Nóvgorod</p>
+			      </td>
+			    </tr>
+
+			</table>
+		</div>
+
+      </div>
+    </div>
+
+    <div class="card-header" id="headingNine" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+          viernes 22 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordion">
+      <div class="card-body">
+
+
+      	<div class="container">
+			<table class="table">
+			  <tbody>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo E</p>
+			      	<p>22 de junio 2018</p>
+			      	<p>15:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/brasilI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[23].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[23].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/costaRicaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>San Petersburgo Stadium</p>
+			      	<p>San Petersburgo</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo D</p>
+			      	<p>22 de junio 2018</p>
+			      	<p>18:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/nigeriaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[24].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[24].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/islandiaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Volgograd Arena</p>
+			      	<p>Volgogrado</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo E</p>
+			      	<p>22 de junio 2018</p>
+			      	<p>20:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/serbiaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[25].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[25].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/suizaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Kaliningrad Stadium</p>
+			      	<p>Kaliningrado</p>
+			      </td>
+			    </tr>
+
+			</table>
+		</div>
+
+      </div>
+    </div>
+
+    <div class="card-header" id="headingTen" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+          sábado 23 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordion">
+      <div class="card-body">
+
+      	<div class="container">
+			<table class="table">
+			  <tbody>
+			    <tr>
+
+			      <td>
+			      	<p>Grupo G</p>
+			      	<p>23 de junio 2018</p>
+			      	<p>15:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/belgicaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[26].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[26].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/tunezD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Spartak Stadium</p>
+			      	<p>Moscú</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo F</p>
+			      	<p>23 de junio 2018</p>
+			      	<p>18:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/coreaDelSurI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[27].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[27].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/mexicoD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Rostov Arena</p>
+			      	<p>Rostov del Don</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo F</p>
+			      	<p>23 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/alemaniaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[28].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[28].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/sueciaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Fisht Stadium</p>
+			      	<p>Sochi</p>
+			      </td>
+			    </tr>
+
+			</table>
+		</div>
+
+      </div>
+    </div>
+
+    <div class="card-header" id="headingEleven" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+          domingo 24 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#accordion">
+      <div class="card-body">
+
+      	<div class="container">
+			<table class="table">
+			  <tbody>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo G</p>
+			      	<p>24 de junio 2018</p>
+			      	<p>15:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/inglaterraI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[29].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[29].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/panamaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Nizhy Novgorod Stadium</p>
+			      	<p>Nizhni Nóvgorod</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo H</p>
+			      	<p>24 de junio 2018</p>
+			      	<p>20:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/japonI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[30].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[30].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/senegalD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Ekaterimburg Arena</p>
+			      	<p>Ekaterimburgo</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo H</p>
+			      	<p>24 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/poloniaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[31].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[31].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/colombiaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Kazan Arena</p>
+			      	<p>Kazán</p>
+			      </td>
+			    </tr>
+
+			</table>
+		</div>
+
+      </div>
+    </div>
+
+    <div class="card-header" id="headingTwelve" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+          lunes 25 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#accordion">
+      <div class="card-body">
+
+      	<div class="container">
+			<table class="table">
+			  <tbody>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo A</p>
+			      	<p>25 de junio 2018</p>
+			      	<p>18:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/uruguayI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[32].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[32].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/rusiaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Samara Arena</p>
+			      	<p>Samara</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo A</p>
+			      	<p>25 de junio 2018</p>
+			      	<p>17:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/arabiaSauditaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[33].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[33].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/egiptoD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Volgograd Arena</p>
+			      	<p>Volgogrado</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo B</p>
+			      	<p>25 de junio 2018</p>
+			      	<p>20:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/espanaI.jpg">
+			      	</div>
+			      </td>
+
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[34].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[34].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/marruecosD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Kaliningrad Stadium</p>
+			      	<p>Kaliningrado</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo B</p>
+			      	<p>25 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/iranI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[35].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[35].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/portugalD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Mordovia Arena</p>
+			      	<p>Saransk</p>
+			      </td>
+			    </tr>
+
+			</table>
+		</div>
+
+      </div>
+    </div>
+
+    <div class="card-header" id="headingThirteen" data-toggle="collapse" data-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+          martes 26 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThirteen" class="collapse" aria-labelledby="headingThirteen" data-parent="#accordion">
+      <div class="card-body">
+
+      	<div class="container">
+			<table class="table">
+			  <tbody>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo C</p>
+			      	<p>26 de junio 2018</p>
+			      	<p>17:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/australiaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[36].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[36].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/peruD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Fisht Stadium</p>
+			      	<p>Sochi</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo C</p>
+			      	<p>26 de junio 2018</p>
+			      	<p>17:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/dinamarcaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[37].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[37].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/franciaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Luzhniki Stadium</p>
+			      	<p>Moscú</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo D</p>
+			      	<p>26 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/nigeriaI.jpg">
+			      	</div>
+				      <td>
+				      	<div class="centro_h040">
+									<% @juego = Match.exist(@partidos[38].id) %>
+									<%if  @juego[0] == nil%>
+										<p> </p>
+										<%else%>
+										<% @inicio = Event.init(@juego[0].id) %>
+										<%if  @inicio[0] == nil%>
+										<p> </p>
+										<%else%>
+										<% @resultado = Event.result(@juego[0].id) %>
+										<%if  @resultado == nil%>
+										<p>0</p>
+										<%else%>
+										<%= @resultado %>
+										<%end%>
+										<%end%>
+									<%end%>
+				      	</div>
+				      </td>
+				      <td>
+				      	<div class="centro_h040">
+									-
+				      	</div>
+				      </td>
+				      <td>
+				      	<div class="centro_h040">
+									<% @juego = Match.exist(@partidos[38].id) %>
+									<%if  @juego[1] == nil%>
+										<p> </p>
+										<%else%>
+										<% @inicio = Event.init(@juego[1].id) %>
+										<%if  @inicio[0] == nil%>
+										<p> </p>
+										<%else%>
+										<% @resultado = Event.result(@juego[1].id) %>
+										<%if  @resultado == nil%>
+										<p>0</p>
+										<%else%>
+										<%= @resultado %>
+										<%end%>
+										<%end%>
+									<%end%>
+				      	</div>
+				      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/argentinaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>San Petersburgo Stadium</p>
+			      	<p>San Pentersburgo</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo D</p>
+			      	<p>26 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/islandiaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[39].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[39].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/croaciaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Rostov Arena</p>
+			      	<p>Rostov del Don</p>
+			      </td>
+			    </tr>
+
+			</table>
+		</div>
+
+      </div>
+    </div>
+
+    <div class="card-header" id="headingFourteen" data-toggle="collapse" data-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+          miércoles 27 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFourteen" class="collapse" aria-labelledby="headingFourteen" data-parent="#accordion">
+      <div class="card-body">
+
+      	<div class="container">
+			<table class="table">
+			  <tbody>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo F</p>
+			      	<p>27 de junio 2018</p>
+			      	<p>17:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/coreaDelSurI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[40].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[40].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/alemaniaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Kazan Arena</p>
+			      	<p>Kazán</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo F</p>
+			      	<p>27 de junio 2018</p>
+			      	<p>19:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/mexicoI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[41].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[41].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/sueciaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Ekaterimburg Arena</p>
+			      	<p>Ekaterimburgo</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo E</p>
+			      	<p>27 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/serbiaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[42].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[42].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/brasilD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Spartak Stadium</p>
+			      	<p>Moscú</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo E</p>
+			      	<p>27 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/suizaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[43].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[43].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/costaRicaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Nizhny Novgorod Stadium</p>
+			      	<p>Nizhni Nóvgorod</p>
+			      </td>
+			    </tr>
+
+			</table>
+		</div>
+
+      </div>
+    </div>
+
+    <div class="card-header" id="headingFiveteen" data-toggle="collapse" data-target="#collapseFiveteen" aria-expanded="false" aria-controls="collapseFiveteen">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFiveteen" aria-expanded="false" aria-controls="collapseFiveteen">
+          jueves 28 junio
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFiveteen" class="collapse" aria-labelledby="headingFiveteen" data-parent="#accordion">
+      <div class="card-body">
+
+      	<div class="container">
+			<table class="table">
+			  <tbody>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo H</p>
+			      	<p>28 de junio 2018</p>
+			      	<p>17:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/japonI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[44].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[44].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/poloniaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Volgograd Arena</p>
+			      	<p>Volgogrado</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo H</p>
+			      	<p>28 de junio 2018</p>
+			      	<p>18:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/senegalI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[45].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[45].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/colombiaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Samara Arena</p>
+			      	<p>Samara</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo G</p>
+			      	<p>28 de junio 2018</p>
+			      	<p>21:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/panamaI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[46].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[46].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/tunezD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Mordovia Arena</p>
+			      	<p>Saransk</p>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td>
+			      	<p>Grupo G</p>
+			      	<p>28 de junio 2018</p>
+			      	<p>20:00 Hora Local</p>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/inglaterraI.jpg">
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[47].id) %>
+								<%if  @juego[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[0].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[0].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								-
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="centro_h040">
+								<% @juego = Match.exist(@partidos[47].id) %>
+								<%if  @juego[1] == nil%>
+									<p> </p>
+									<%else%>
+									<% @inicio = Event.init(@juego[1].id) %>
+									<%if  @inicio[0] == nil%>
+									<p> </p>
+									<%else%>
+									<% @resultado = Event.result(@juego[1].id) %>
+									<%if  @resultado == nil%>
+									<p>0</p>
+									<%else%>
+									<%= @resultado %>
+									<%end%>
+									<%end%>
+								<%end%>
+			      	</div>
+			      </td>
+			      <td>
+			      	<div class="bandera_h040">
+			      		<img src="../assets/administrator/images/belgicaD.jpg">
+			      	</div>
+			      </td>
+			      <td class="estadio_h040">
+			      	<br></br>
+			      	<p>Kaliningrad Stadium</p>
+			      	<p>Kaliningrado</p>
+			      </td>
+			    </tr>
+
+			</table>
+		</div>
+
+      </div>
+    </div>
+   </div>
+
+</div>
+</div>
+
+</body>

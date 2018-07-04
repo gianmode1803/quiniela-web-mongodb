@@ -1,0 +1,38 @@
+<%= simple_form_for(@stadium) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card card-outline-info">
+                  <div class="card-header">
+                    <h4 class="m-b-0 text-white" style="text-align: center;"><%=titulo%></h4>
+                  </div>
+                    <div class="card-body">
+                        <h3 class="card-title m-t-15" style="text-align: center;">Información</h3>
+                        <hr>
+                        <form>
+
+
+                            <div class="form-inputs">
+                              <%= f.input :ciudad, required: true %>
+                              <%= f.input :capacidad, required: true %>
+                              <%= f.input :nombre, required: true %>
+                            </div>
+
+                            <div class="form-actions">
+                                <%= f.button :submit, titulo_boton, class: 'btn-info btn sweet-html' do%>
+                                <i class="fa fa-check"></i>
+                              <%end%>
+                              <%= link_to "Cancelar", stadia_path, class: 'btn btn-danger'%>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>

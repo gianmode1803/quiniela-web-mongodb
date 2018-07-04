@@ -1,0 +1,14 @@
+one:
+  tipo: cuartos
+  puntos: 0
+  user: user_10
+
+two:
+  tipo: octavos
+  puntos: 0
+  user: user_10
+
+three:
+  tipo: completa
+  puntos: 0
+  user: user_10

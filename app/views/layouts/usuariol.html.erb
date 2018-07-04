@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiniela</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header id="header">
+  <nav class="navbar navbar-fixed-top" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+
+        <a class="navbar-brand" href="#header">Bikin</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-right">
+        <ul class="nav navbar-nav">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#feature">Noticias</a></li>
+          <li><a href="/matches">Calendario</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#search">Search</a></li>
+          <% if user_signed_in? %>
+                    <li class="active"> <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+                    <li class="active"> <%= link_to "Iniciar Sesion", new_user_session_path%></li>
+                    <li class="active"> <%= link_to "Registrarse", new_user_registration_path %></li>
+          <% end %>
+
+        </ul>
+      </div>
+    </div>
+    <!--/.container-->
+  </nav>
+  <!--/nav-->
+</header>
+  <body>
+
+    <%= yield %>
+  </body>
+</html>

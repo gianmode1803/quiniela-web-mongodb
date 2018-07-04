@@ -1,0 +1,41 @@
+
+<div>
+    <div class = "container">
+        <title id="notice">< INvITAR USUARIO  ></title>
+        <!-- <div class = "row"> -->
+                 <div class = "text-center">
+                     <h3>Invitar usuarios</h3>
+                </div>
+        <!--</div> -->
+    </div>  
+</div>        
+    <div class="container">
+            <h2><%= t "devise.invitations.new.header" %></h2>
+            <%= simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post} do |f| %>
+                <%= devise_error_messages! %>
+                <label class="col-sm-2 control-label">Ingresa el email</label> 
+            <% resource.class.invite_key_fields.each do |field| -%>
+                <%= f.input field %>
+            <% end %>
+            <div class="col-sm-offset-2 col-sm-10">
+                <%= f.button :submit, t("devise.invitations.new.submit_button") %>
+                    <% end %>
+            </div>
+     </div>
+         
+
+
+
+
+    
+
+
+
+
+
+
+
+
+ 
+
+  

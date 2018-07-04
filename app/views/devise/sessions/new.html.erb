@@ -1,0 +1,47 @@
+  <div class="unix-login">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <div class="login-content card">
+                            <div class="login-form">
+                                <h1 align="center">Iniciar Sesión</h1>
+
+                                <div class="container-fluid"> <!-- espacio entre el título y el email -->
+                                <h2>  </h2>
+                                </div>
+
+								<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+								  
+								  	<div class="form-group">
+								    	<%= f.input :email, autofocus: true, maxlength:25 %>
+								    </div>	
+								    <div class="form-group">	
+								    	<%= f.input :password, maxlength:20%>
+								    </div>	
+								  
+								  	<div class="checkbox">
+								    	<%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+								  	</div>
+
+								<div align="center">
+								<h2>  </h2>
+								<%= flash[:recaptcha_error] %>
+								<%= recaptcha_tags %></div>
+								
+								<%= f.button :submit, "ENTRAR", class: 'btn btn-primary btn-flat m-b-10 m-t-30' %>
+								
+								<% end %>
+
+											<div class="register-link m-t-15 text-center">
+											<%= link_to "Olvidó su contraseña?",new_user_password_path %>
+											<h2>  </h2>
+													<p>No tienes una cuenta aún? <%= link_to "Regístrate",new_user_registration_path %></p>
+											</div>
+
+								 </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,142 @@
+.row.vdivide [class*='col-sm']:not(:last-child):after {
+  background: #e0e0e0;
+  width: 3px;
+  content: "";
+  display:block;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+}
+
+ul li a:hover {
+  color:gray;
+}
+
+.botoneraGrupo11{
+	padding-top: 10px
+	bottom: 10px;
+}
+
+.containerGGrupo11{
+	margin-bottom: 10px;
+}
+
+
+.pageHeadGrupo11{
+	padding-left: 3%;
+}
+
+.col{
+	padding: 0 !important;
+}
+
+.colGrupo11{
+	width: 100%;
+}
+
+.grupo11Col-4{
+	padding-left: 30px !important;
+}
+
+.grupo11{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.grupo11Tabla{
+	padding-left: 300px;
+}
+
+.tableGrupo11{
+	background-color: white;
+}
+
+.col-4grupo11{
+	background:yellow; 
+	height: 75px;
+	width: 150px;
+}
+
+.versusGrupo11{
+	padding-right: 5px !important;
+	padding-left: 5px !important;
+}
+
+.versusGrupo112{
+	width: 150px;
+}
+
+.containerGrupo11{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    text-align:left;
+    margin-right:-4px;
+}
+
+.navIndexGrupo11{
+	border-radius: 10px;
+	margin-bottom: 20px;
+	margin-top: 50px;
+	background-color: #BFBFBF;
+	margin-right: 40px !important;
+	margin-left: 40px !important;
+}
+
+.altura{
+	height: 55px;
+}
+
+.botonesGrupo11{
+	border-radius: 100%;
+	margin-top: 7px;
+}
+
+.paddinGrupo11{
+	padding-right: 25px;
+}
+
+
+
+
+
+.navTopGrupo11{
+	margin-top: 30px;
+}
+
+
+.navIndexGrupo112{
+	border-radius: 5px;
+	background-color: #F0F0F0;
+	width: 95%;
+	height: 60px;
+	padding-top: 18px;
+	padding-left: 50px;
+}
+
+.container112{
+	width: 93%;
+	background-color: white;
+}
+
+.navIndexGrupo113{
+	border-radius: 5px;
+	background-color: #C8C8C8;
+	width: 95%;
+	height: 60px;
+	padding-top: 18px;
+	padding-left: 50px;
+}
+
+.botonGuardarQuiniela{
+	width: 50%;
+	margin-top: 50px;
+}

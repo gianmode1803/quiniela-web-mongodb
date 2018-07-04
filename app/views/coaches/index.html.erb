@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+<script>
+  jQuery(document).ready(function($) {
+      $(".clickable-row").click(function() {
+          window.location = $(this).data("href");
+      });
+  });
+</script>
+
+
+<div class="table-responsive">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <h1>Entrenadores</h1>
+      <table class="table table-hover table-bordered" cellpadding="15">
+        <thead>
+          <tr align="center">
+            <th><font color="#000000">Nombre y Apellido</th>
+            <th><font color="#000000">Apodo</th>
+            <th><font color="#000000">Fecha nacimiento</th>
+            <th><font color="#000000">Ciudad nacimiento</th>
+            <% if user_signed_in? && current_user.admin%>
+            <th colspan="3"></th>
+            <% end %>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @coaches.each do |coach| %>
+            <tr align="center" class="clickable-row" data-href="coaches/<%= coach.id %>">
+              <td><font color="#000000"><%= coach.nombre + " " + coach.apellido %></td>
+              <td><font color="#000000"><%= coach.apodo %></td>
+              <td><font color="#000000"><%= coach.fecha_nacimiento.strftime("%d/%m/%Y") %></td>
+              <td><font color="#000000"><%= coach.ciudad_nacimiento %></td>
+
+            <% if user_signed_in? && current_user.admin%>
+              <td><font color="#000000"><%= link_to 'Editar', edit_coach_path(coach) %></td>
+              <td><font color="#000000"><%= link_to 'Borrar', coach, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <% if user_signed_in? && current_user.admin%>
+      <%= link_to 'Nuevo entrenador', new_coach_path %>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+

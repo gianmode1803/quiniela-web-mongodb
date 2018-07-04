@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<% if user_signed_in? && current_user.admin == false%>
+    <h1><font color="#000000">Lo sentimos pero esta pantalla es sólo para administradores</h1>
+<% elsif user_signed_in? && current_user.admin  %>
+
+<h1 align="center">Carrusel Imágenes destacadas</h1>
+<br/>
+<div class="row justify-content-center">
+  <div class="col-lg-10">
+    <table class="table table-hover table-bordered" cellpadding="15">
+      <thead>
+        <tr align="center">
+          <th style="text-align: center;">Imagen</th>
+          <th style="text-align: center;">Fecha</th>
+          <th style="text-align: center;">Descripción</th>
+          <th colspan="2" style="text-align: center;">Acción</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% mediacar = Medium.where(:tipo => "imagenes").includes(:tags).where("tags.nombre" => "Destacado").order(:created_at) %>
+        <% mediacar.each do |media_carrusel| %>
+        <tr>
+          <td style="text-align:center;"><img src="<%= media_carrusel.url %>" height="150" width="450"></td>
+          <td style="text-align:center; vertical-align: middle"><%= media_carrusel.created_at %> </td>
+          <td style="text-align:center; vertical-align: middle"><%= media_carrusel.descripcion %> </td>
+          <td style="vertical-align: middle"><a class="btn btn-primary btn-lg" <%= link_to 'Mostrar', media_carrusel %></a></td>
+          <td style="vertical-align: middle"><a class="btn btn-primary btn-lg" <%= link_to 'Eliminar', media_carrusel, method: :delete, data: { confirm: '¿Desea eliminar esta imagen?' } %></a></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<br>
+
+<center><%= link_to 'Nueva imagen destacada', new_medium_path,{:style=>'color:#FFFFFF;', :class => "btn btn-primary btn-lg"} %></center>
+<% end %>

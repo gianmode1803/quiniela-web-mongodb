@@ -1,0 +1,123 @@
+.slider2 {
+  position: relative; 
+  padding-top:70px;
+}
+
+.slider2 img {
+    width: 100%;
+    height: auto;
+}
+
+#carousel-slider2 {
+  position: relative;
+}
+#carousel-slider2 .carousel-indicators {
+  bottom: -25px;
+}
+#carousel-slider2 .carousel-indicators li {
+  border: 1px solid #ffbd20;
+}
+#carousel-slider2 a i {
+  border: 1px solid #fff;
+  border-radius:50%;
+  font-size: 30px;
+  height: 50px;
+  padding: 8px;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  color:#fff;
+}
+#carousel-slider2 a i:hover {
+  background:#d32323;
+  color:#fff;
+  border: 1px solid #d32323;
+}
+#carousel-slider2 
+.carousel-control {
+  width:inherit;
+}
+
+#carousel-slider2 .carousel-control.left i {
+  left:40px;
+  top: calc(50% - 25px);
+}
+#carousel-slider2 .carousel-control.right i {
+  right: 40px;
+  top: calc(50% - 25px);
+}
+#carousel-slider2
+.carousel-control.left, 
+#carousel-slider2
+.carousel-control.right {
+  background: none;
+}
+
+#carrusel2 .carousel-caption2 {
+  /*position: absolute;
+  right: 15%;
+  top: calc(50% - 150px);
+  font-size:40px;
+  left: 15%;
+  color: #fff;
+  */
+  right: 15%;
+  left: 15%;
+  position: absolute;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  padding-bottom: 0px;
+  text-align: center;
+
+}
+
+#carrusel2 .carousel-caption  h2 {
+  font-size:35px;
+  color:#ffffff;
+  font-weight: bold;
+}
+
+#carrusel2 .carousel-caption  h2 span {
+  font-size:35px;
+  color: #ffffff;
+}
+
+#carrusel2 .carousel-caption  p {
+  font-size:20px;
+  margin-top:10px;
+  color:#ffffff;
+  font-style: oblique;
+}
+
+.carousel-inner .form-inline .form-group button[type="livedemo"]{
+  padding:20px 60px;
+  font-size:25px;
+  background:#0BA9F9;
+  color:#fff;
+}
+
+.carousel-inner .form-inline .form-group button[type="livedemo"]:hover {
+  color:#0BA9F9;
+  background:#fff;
+  -webkit-transition: color 300ms, background-color 300ms;
+  -moz-transition: color 300ms, background-color 300ms;
+  -o-transition:  color 300ms, background-color 300ms;
+  transition:  color 300ms, background-color 300ms;
+}
+
+.carousel-inner .form-inline .form-group button[type="getnow"]{
+  padding:20px 60px;
+  font-size:25px;
+  background:#fff;
+  color:#0BA9F9;
+}
+
+.carousel-inner .form-inline .form-group button[type="getnow"]:hover {
+  color:#fff;
+  background:#0BA9F9;
+  -webkit-transition: color 300ms, background-color 300ms;
+  -moz-transition: color 300ms, background-color 300ms;
+  -o-transition:  color 300ms, background-color 300ms;
+  transition:  color 300ms, background-color 300ms;
+}
